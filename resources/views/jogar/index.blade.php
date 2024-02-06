@@ -31,6 +31,9 @@
     <script>
         var aposta = @json($aposta);
         var token = @json($token);
+        var vst = @json($saldo);
+        vst = parseInt(vst);
+
     </script>
 
     

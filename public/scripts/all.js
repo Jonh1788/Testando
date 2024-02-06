@@ -319,8 +319,6 @@ define("scripts/game.js", function(exports){
     };
 
 
-	//pegar saldo
-	var vst = 5;
 
 // fetch(url)
 //   .then(response => {
