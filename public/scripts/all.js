@@ -286,7 +286,7 @@ define("scripts/game.js", function(exports){
 			})
 			
              location.href = "../painel";
-        }, 2000);
+        }, 3000);
 	};
 
 	exports.gameOver = function () {
@@ -314,7 +314,7 @@ define("scripts/game.js", function(exports){
 			})
 			
              location.href = "../painel";
-        }, 2000);
+        }, 3000);
         
     };
 
