@@ -13,9 +13,11 @@ class JogarController extends Controller
         ->where('email',$email)
         ->value('saldo');
 
+        $multiplicador = DB::table('app')
+        ->value('multiplicador');
         
         $token = $request->_token;
         $aposta = $request->bet; 
-        return view("jogar.index", compact('aposta', 'token', 'saldo'));
+        return view("jogar.index", compact('aposta', 'token', 'saldo', 'multiplicador'));
     }
 }

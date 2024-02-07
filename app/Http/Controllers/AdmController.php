@@ -41,9 +41,12 @@ class AdmController extends Controller
         ->where('status', '!=', 'Aguardando Aprovação')
         ->sum('valor');
 
+        $multiplicador = DB::table('app')
+        ->value('multiplicador');
+
         
        
-        return view("adm.index", ["result"=> (array)$result[0], "quantidadeUsuarios" => $quantidadeUsuarios, 'quantidadeNumeroDepositos' => $quantidadeNumeroDepositos, 'valorTotalDepositos' => $valorTotalDepositos, 'totalSaques' => $totalSaques, 'valorTotalSaques' => $valorTotalSaques]);
+        return view("adm.index", ["result"=> (array)$result[0], "quantidadeUsuarios" => $quantidadeUsuarios, 'quantidadeNumeroDepositos' => $quantidadeNumeroDepositos, 'valorTotalDepositos' => $valorTotalDepositos, 'totalSaques' => $totalSaques, 'valorTotalSaques' => $valorTotalSaques, 'multiplicador' => $multiplicador]);
     }
 
     public function processo(Request $request){
@@ -260,6 +263,30 @@ class AdmController extends Controller
                     } else {
 
                         $result_insert = DB::table('app')->insert(['dificuldade_jogo' => $valor]);
+
+                        
+                        if ($result_insert) {
+                            return redirect('../adm');
+                        } else {
+                            return redirect('../adm');
+                        }
+                        }
+
+                case "multiplicador":
+            
+                    if ($result->count() > 0) {
+                        $result_update = DB::table('app')
+                        ->update(['multiplicador' => $valor]);
+                        
+                        if ($result_update > 0) {
+                            return redirect('../adm');
+                            
+                        } else {
+                            return redirect('../adm');
+                        }
+                    } else {
+
+                        $result_insert = DB::table('app')->insert(['multiplicador' => $valor]);
 
                         
                         if ($result_insert) {

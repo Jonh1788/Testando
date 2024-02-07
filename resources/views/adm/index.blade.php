@@ -612,6 +612,27 @@ function atualizarValor() {
     <div class="card card-hover">
       <div class="box bg-dark text-center">
         <h1 class="font-light text-white">
+          <i class="mdi mdi-percent"></i>
+        </h1>
+        <h5 class="text-white">Multiplicador</h5>
+        <h7 class="text-white">X</h7>
+        <form action="../adm/processos?opcao=multiplicador" method="post" id="editForm3">  
+        @csrf  
+            <input type="text" class="form-control custom-input" value="<?php echo $result['multiplicador'] ?>" id="multiplicador" placeholder="Digite o valor" name="valor" required>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        </form>
+                 
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="col-md-6 col-lg-3 col-xlg-3 mb-3"> <!-- Adicionado mb-3 para margem inferior -->
+    <div class="card card-hover">
+      <div class="box bg-dark text-center">
+        <h1 class="font-light text-white">
           <i class="mdi mdi-margin"></i>
         </h1>
         <h5 class="text-white">Taxa de Saque</h5>
@@ -626,6 +647,9 @@ function atualizarValor() {
              
       </div>
     </div>
+
+    
+    
     
   </div>
 </div>

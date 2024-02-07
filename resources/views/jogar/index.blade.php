@@ -32,12 +32,24 @@
         var aposta = @json($aposta);
         var token = @json($token);
         var vst = @json($saldo);
+        var multiplicador = @json($multiplicador);
+        if(!multiplicador){
+            multiplicador = 1
+        }
+        
+        multiplicador = parseInt(multiplicador);
         vst = parseInt(vst);
+
+        if(vst <= 0){
+            location.href = "../painel"
+        }
 
     </script>
 
     
     <script src="../scripts/all.js"></script>
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+
     
 </body>
 </html>

@@ -30,8 +30,17 @@ class PainelController extends Controller
             header("Location: /");
             exit();
         }
+
+        $multiplicador = DB::table('app')
+        ->value('multiplicador');
+
+        $apostaMin = DB::table('app')
+        ->value('aposta_min');
+
+        $apostaMax = DB::table('app')
+        ->value('aposta_max');
         
-        return view('painel.index', compact('saldo', 'dificuldade_jogo'));
+        return view('painel.index', compact('saldo', 'dificuldade_jogo', 'multiplicador', 'apostaMin', 'apostaMax'));
     }
 
     private function processarConfirmacoesDeposito($email)

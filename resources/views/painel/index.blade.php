@@ -49,7 +49,7 @@
 <a href="../logout" class="nav-link w-nav-link">Sair</a>
 <a href="../deposito" class="button nav w-button">DEPOSITAR</a>
 </nav>
-
+@extends('layout.app')
 <style type="text/css">/* Estilos gerais do menu */
 .nav-bar {
     display: flex;
@@ -218,14 +218,14 @@ cair, #ficadica!</p>
 <div class="properties">
 <h4 class="rarity-heading">Valor de entrada</h4>
 <div class="rarity-row roboto-type2">
-<input type="number" class="large-input-field w-input" max="25" min="1" step="1" name="bet" id="bet" required value="5">
+<input type="number" class="large-input-field w-input" max="{{ $apostaMax }}" min="{{ $apostaMin }}" step="1" name="bet" id="bet" required value="5">
 </div>
 </div>
 <div class>
-<input type="submit" value="Cortar" class="primary-button w-button"><br><br>
+<input type="submit" value="Cortar" {{ $saldo <= 0 ? 'disabled' : '' }} class="primary-button w-button" style="{{ $saldo <= 0 ? 'background-color: #4f515b !important;' : '' }}"><br><br>
 </div>
 </form>
-<p>Valores para jogar: R$1.00 à R$25.00</p>
+<p>Valores para jogar: R${{ $apostaMin }}.00 à R${{ $apostaMax }}.00</p>
 </div>
 <div id="wins" style="
                 display: block;
@@ -296,55 +296,55 @@ pode ganhar ao cortá-la, confira nossa tabela.</p>
 <div>
 <h3 class="rarity-heading">Variações</h3>
 <div class="rarity-row blue">
-<div class="rarity-number">R$0.05</div>
+<div class="rarity-number">R$ {{ 0.05 * $multiplicador}}</div>
 <div>Maçã</div>
 </div>
 <div class="rarity-row">
-<div class="rarity-number">R$0.10</div>
+<div class="rarity-number">R${{ 0.10 * $multiplicador}}</div>
 <div>Maracuja</div>
 </div>
 <div class="rarity-row blue">
-<div class="rarity-number">R$0.15</div>
+<div class="rarity-number">R${{ 0.15 * $multiplicador}}</div>
 <div>Melância</div>
 </div>
 <div class="rarity-row">
-<div class="rarity-number">R$0.20</div>
+<div class="rarity-number">R${{ 0.20 * $multiplicador}}</div>
 <div>Manga</div>
 </div>
 <div class="rarity-row blue">
-<div class="rarity-number">R$0.25</div>
+<div class="rarity-number">R${{ 0.25 * $multiplicador}}</div>
 <div>Abacate</div>
 </div>
 <div class="rarity-row">
-<div class="rarity-number">R$0.30</div>
+<div class="rarity-number">R${{ 0.30 * $multiplicador}}</div>
 <div>Mamão</div>
 </div>
 <div class="rarity-row blue">
-<div class="rarity-number">R$0.35</div>
+<div class="rarity-number">R${{ 0.35 * $multiplicador}}</div>
 <div>Banana</div>
 </div>
 <div class="rarity-row">
-<div class="rarity-number">R$0.40</div>
+<div class="rarity-number">R${{ 0.40 * $multiplicador}}</div>
 <div>Limão</div>
 </div>
 <div class="rarity-row blue">
-<div class="rarity-number">R$0.45</div>
+<div class="rarity-number">R${{ 0.45 * $multiplicador}}</div>
 <div>Romã</div>
 </div>
 <div class="rarity-row">
-<div class="rarity-number">R$0.50</div>
+<div class="rarity-number">R${{ 0.50 * $multiplicador}}</div>
 <div>Morango</div>
 </div>
 <div class="rarity-row blue">
-<div class="rarity-number">R$0.75</div>
+<div class="rarity-number">R${{ 0.75 * $multiplicador}}</div>
 <div>Laranja</div>
 </div>
 <div class="rarity-row">
-<div class="rarity-number">R$1.00</div>
+<div class="rarity-number">R${{ 1.00 * $multiplicador}}</div>
 <div>Kiwi</div>
 </div>
 <div class="rarity-row blue">
-<div class="rarity-number">R$1.00</div>
+<div class="rarity-number">R${{ 1.00 * $multiplicador}}</div>
 <div>Dragão</div>
 </div>
 </div>

@@ -81,7 +81,7 @@ $nomeDois = config('subway_pix.nomeDois');
 <a href="/login" class="nav-link w-nav-link w--current" style="max-width: 940px;">Login</a>
 <a href="/cadastrar" class="button2 nav w-button">Cadastrar</a>
 </nav>
-
+@extends('layout.app')
 
 
 

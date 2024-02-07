@@ -177,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 </script>
+@extends('layout.app')
 <section id="hero" class="hero-section dark wf-section">
 <div class="minting-container w-container">
 <img src="../assets/images/asset.png" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image" />
