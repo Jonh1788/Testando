@@ -304,7 +304,7 @@ Valor para saque: (SALDO: R$
 
 </div>
 </form>
-
+@extends('layout.app')
 
 
 
