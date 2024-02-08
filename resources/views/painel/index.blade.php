@@ -35,9 +35,9 @@ $nomeDois = config('subway_pix.nomeDois');
     });
     </script>
 
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
 
 <script id="ze-snippet" src="../static.zdassets.com/ekr/snippet1e8a.js?key=034b691c-1a3c-4abb-92f4-c267f791703a" type="d004d771cdc9fb104a01c815-text/javascript"> </script>
 </head>

@@ -16,13 +16,13 @@ $nomeDois = config('subway_pix.nomeDois');
 <title>
         {{ $nomeUnico }}  </title>
 <meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O {{$nomeUnico}} vai fazer você faturar muito." name="description">
-<meta property="og:image" content="assets/images/logo.png">
+<meta property="og:image" content="../assets/images/logo.png">
 <meta property="og:url" content="index.php">
-<meta content="FruitsMoney 🍓" property="og:title">
+<meta content="{{$nomeUnico}}" property="og:title">
 <meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O {{$nomeUnico}} vai fazer você faturar muito." property="og:description">
 <meta name="twitter:site" content="@FruitsMoney">
-<meta name="twitter:image" content="assets/images/logo.png">
-<meta content="FruitsMoney 🍓" property="twitter:title">
+<meta name="twitter:image" content="../assets/images/logo.png">
+<meta content="{{$nomeUnico}}" property="twitter:title">
 <meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O {{$nomeUnico}} vai fazer você faturar muito." property="twitter:description">
 <meta property="og:type" content="website">
 <meta content="summary_large_image" name="twitter:card">
@@ -45,9 +45,9 @@ $nomeDois = config('subway_pix.nomeDois');
             .className += t + "touch")
     }(window, document);
     </script>
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9SY5NVV83" type="a54c1f21f98644bc47b03e86-text/javascript"></script>
 <script type="a54c1f21f98644bc47b03e86-text/javascript">
@@ -103,7 +103,7 @@ src="https://www.facebook.com/tr?id=1401674844055197&amp;ev=PageView&amp;noscrip
 <img src="../assets/images/logoapple.png" loading="lazy" height="28" alt class="image-6">
 <div class="nav-link logo">{{$nomeUnico}}</div>
 </a>
-<nav role="navigation" class="nav-menu w-nav-menu">
+<nav role="navigation" class="nav-menu w-nav-menu" style="padding: 8px">
 <a href="../login" class="nav-link w-nav-link">Jogar</a>
 <a href="../login" class="nav-link w-nav-link">Login</a>
 <a href="../cadastrar" class="button nav w-button">Cadastrar</a>

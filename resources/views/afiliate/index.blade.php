@@ -24,11 +24,11 @@ $nomeDois = config('subway_pix.nomeDois');
   <meta charset="pt-br">
   <title><?= $nomeUnico ?> </title>
 
-  <meta property="og:image" content="{{ asset('afiliateFiles/logo.png')}}">
+  <meta property="og:image" content="../assets/images/logo.png">
 
   <meta content="<?= $nomeUnico ?>" property="og:title">
 
-  <meta name="twitter:image" content="{{ asset('afiliateFiles/logo.png')}}">
+  <meta name="twitter:image" content="../assets/images/logo.png">
 
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="{{ asset('afiliateFiles/page.css')}}" rel="stylesheet" type="text/css">
@@ -53,14 +53,14 @@ $nomeDois = config('subway_pix.nomeDois');
         .className += t + "touch")
     }(window, document);
   </script>
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
 
 
   <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
 
-  <link rel="stylesheet" href="{{ asset('afiliateFiles/')}}" media="all">
+  <link rel="stylesheet" href="{{ asset('afiliateFiles/css')}}" media="all">
 
 
 

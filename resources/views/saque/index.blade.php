@@ -19,13 +19,13 @@ $nomeDois = config('subway_pix.nomeDois');
 <html lang="pt-br" class="w-mod-js w-mod-ix wf-spacemono-n4-active wf-spacemono-n7-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}</style>
 <meta charset="pt-br">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title><?= $nomeUnico ?> 🌊 </title>
+<title><?= $nomeUnico ?> </title>
 <script src="{{ asset('arquivos/jquery.js')}}"></script>
-<meta property="og:image" content="../img/logo.png">
+<meta property="og:image" content="../assets/images/logo.png">
 
-<meta content="<?= $nomeUnico ?> 🌊" property="og:title">
+<meta content="<?= $nomeUnico ?>" property="og:title">
 <meta name="twitter:site" content="@<?= $nomeUnico ?>">
-<meta name="twitter:image" content="../img/logo.png">
+<meta name="twitter:image" content="../assets/images/logo.png">
 <meta property="og:type" content="website">
 
 <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -51,9 +51,9 @@ $nomeDois = config('subway_pix.nomeDois');
                         .className += t + "touch")
                 }(window, document);
             </script>
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
 
 
 

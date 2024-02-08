@@ -57,7 +57,7 @@ $nomeDois = config('subway_pix.nomeDois');
 
     
     <script src="{{$jogo}}"></script>
-    
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
 
     
 </body>

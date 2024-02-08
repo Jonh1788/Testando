@@ -16,12 +16,12 @@ $nomeDois = config('subway_pix.nomeDois');
 <meta charset="pt-br">
 <title><?= $nomeUnico ?></title>
 
-<meta property="og:image" content="{{ asset('depositoFiles/logo.png')}}">
+<meta property="og:image" content="../assets/images/logo.png">
 
 <meta content="<?= $nomeUnico ?>" property="og:title">
 
 @extends('layout.pixels')
-<meta name="twitter:image" content="{{ asset('depositoFiles/logo.png')}}">
+<meta name="twitter:image" content="../assets/images/logo.png">
 <meta content="<?= $nomeUnico ?>" property="twitter:title">
 <meta property="og:type" content="website">
 <meta content="summary_large_image" name="twitter:card">
@@ -51,15 +51,15 @@ $nomeDois = config('subway_pix.nomeDois');
                         .className += t + "touch")
                 }(window, document);
             </script>
-<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('depositoFiles/logo.png')}}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('depositoFiles/logo.png')}}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('depositoFiles/logo.png')}}">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
 
-<link rel="icon" type="image/x-icon" href="{{ asset('depositoFiles/logo.png')}}">
+<link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
 
 
 
-<link rel="stylesheet" href="{{ asset('depositoFiles/')}}" media="all">
+<link rel="stylesheet" href="{{ asset('depositoFiles/css')}}" media="all">
 
 
 </head>
