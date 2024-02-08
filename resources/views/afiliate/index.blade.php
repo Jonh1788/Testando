@@ -208,7 +208,7 @@ $nomeDois = config('subway_pix.nomeDois');
           </p>
 
           <br><br>
-
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
           <script>
             function copiarLink() {
               var linkText = '<?php echo $linkAfiliado; ?>';
@@ -218,7 +218,15 @@ $nomeDois = config('subway_pix.nomeDois');
               input.select();
               document.execCommand('copy');
               document.body.removeChild(input);
-              alert('Link copiado para a área de transferência: ' + linkText);
+              Swal.fire({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    icon: "success",
+                    timerProgressBar: true,
+                    text: "Código Copiado!",
+            })
             }
           </script>
 
