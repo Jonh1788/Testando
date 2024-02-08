@@ -22,11 +22,11 @@ $nomeDois = config('subway_pix.nomeDois');
     }
   </style>
   <meta charset="pt-br">
-  <title><?= $nomeUnico ?> 🌊 </title>
+  <title><?= $nomeUnico ?> </title>
 
   <meta property="og:image" content="{{ asset('afiliateFiles/logo.png')}}">
 
-  <meta content="<?= $nomeUnico ?> 🌊" property="og:title">
+  <meta content="<?= $nomeUnico ?>" property="og:title">
 
   <meta name="twitter:image" content="{{ asset('afiliateFiles/logo.png')}}">
 

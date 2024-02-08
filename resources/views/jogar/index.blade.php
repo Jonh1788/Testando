@@ -1,3 +1,10 @@
+<?php
+
+$nomeUnico = config('subway_pix.nomeUnico');
+$nomeUm = config('subway_pix.nomeUm');
+$nomeDois = config('subway_pix.nomeDois');
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -15,12 +22,12 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="images/index.css">
     
-    <title>Fruit Ninja 🍓 | Jogo da Frutinha</title>
+    <title>{{$nomeUnico}}</title>
 </head>
 <body>
     <div id="extra"></div>
     <div id="desc">
-        <div>Jogo da Frutinha<a href="http://jogodasfrutinha.com/" target="_blank"></a></div>
+        <div>Jogo da Frutinha<a href="../" target="_blank"></a></div>
         <div id="browser"></div>
     </div>
     <div id="sair" onclick="gameEnd()" style="z-index: 9999; cursor: pointer;">
@@ -33,6 +40,7 @@
         var token = @json($token);
         var vst = @json($saldo);
         var multiplicador = @json($multiplicador);
+        var email = @json($email);
         if(!multiplicador){
             multiplicador = 1
         }
@@ -44,11 +52,12 @@
             location.href = "../painel"
         }
 
+
     </script>
 
     
-    <script src="../scripts/all.js"></script>
-    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+    <script src="{{$jogo}}"></script>
+    
 
     
 </body>

@@ -1,3 +1,11 @@
+<?php
+
+$nomeUnico = config('subway_pix.nomeUnico');
+$nomeUm = config('subway_pix.nomeUm');
+$nomeDois = config('subway_pix.nomeDois');
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -5,15 +13,14 @@
 <head>
 <meta charset="pt-br">
 <title>
-        DropFruit 🍓 |
-        Jogo da Frutinha    </title>
+       {{ $nomeUnico }}   </title>
 <meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O jogo da frutinha vai fazer você faturar muito." name="description">
 <meta property="og:image" content="../assets/images/logo.png">
-<meta content="FruitsMoney 🍓" property="og:title">
+<meta content="{{$nomeUnico}}" property="og:title">
 <meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O jogo da frutinha vai fazer você faturar muito." property="og:description">
 <meta name="twitter:site" content="@DropFruit">
 <meta name="twitter:image" content="../assets/images/logo.png">
-<meta content="DropFruit 🍓" property="twitter:title">
+<meta content="{{$nomeUnico}}" property="twitter:title">
 <meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O jogo da frutinha vai fazer você faturar muito." property="twitter:description">
 <meta property="og:type" content="website">
 <meta content="summary_large_image" name="twitter:card">
@@ -40,7 +47,7 @@
 <div class="container w-container" style="padding: 16px !important;">
 <a href="../" aria-current="page" class="brand w-nav-brand w--current">
 <img src="../assets/images/logoapple.png" loading="lazy" height="28" alt class="image-6">
-<div class="nav-link logo">JogoDasFrutinha🍓</div>
+<div class="nav-link logo">{{$nomeUnico}}</div>
 </a>
 <nav role="navigation" class="nav-menu w-nav-menu" style="padding: 8px !important;">
 <a href="../" class="nav-link w-nav-link">Jogar</a>
@@ -49,7 +56,7 @@
 <a href="../logout" class="nav-link w-nav-link">Sair</a>
 <a href="../deposito" class="button nav w-button">DEPOSITAR</a>
 </nav>
-@extends('layout.app')
+
 <style type="text/css">/* Estilos gerais do menu */
 .nav-bar {
     display: flex;
@@ -98,7 +105,7 @@
 </div>
   <div class="mobile-menu">
             <nav role="navigation" class="nav-menu w-nav-menu">
-                <a href="../" class="nav-link w-nav-link">JogoDasFrutinha</a>
+                <a href="../" class="nav-link w-nav-link">{{ $nomeUnico }}</a>
                 <a href="../" class="nav-link w-nav-link">Jogar</a>
                 <a href="../saque" class="nav-link w-nav-link">Saque</a>
                 <a href="../afiliate" class="nav-link w-nav-link">Divulgue & Ganhe</a>
@@ -199,9 +206,61 @@ document.addEventListener("DOMContentLoaded", function() {
                 width: 50px;
                 margin: -10px 0 0 0;
             }
+
+            .containerPop {
+                border-style: solid;
+                border-width: 8px;
+                border-color: #1f2024;
+            }
+
+            .button2 {
+                background-color: #fe1f4f !important;
+                border: solid !important;
+                border-color: #1f2024 !important;
+                box-shadow: -3px 3px 0 0 #1f2024 !important;
+            }
+
+            .button2:hover{
+                box-shadow: -6px 6px 0 0 #1f2024 !important;
+            }
             </style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const queryString = window.location.search;
 
+    const urlParams = new URLSearchParams(queryString);
 
+    window.addEventListener('load', () => {
+        const saldo = @json($saldo);
+        var mensagem = saldo > 0 ? " Vamos jogar!" : " Deposite com o link abaixo, e vem ganhar com a gente!";
+        var mensagemBtn = saldo > 0 ? "Jogar!" : "<a href='../deposito' style='color: #fff;'>Depositar!";
+        const msg = urlParams.get("msg");
+        const value = parseFloat(urlParams.get("value")).toFixed(2);
+        if(!isNaN(value)){
+            setTimeout(() => {
+                
+                
+                    clearTimeout(timeoutId);
+                    Swal.fire({
+                        title: "Uau!",
+                        html: "<p>Você poderia ter ganho <span style='color: #000; font-weight:bold;'>R$" + value + "</span><br>" + mensagem + "</p>",
+                        confirmButtonText: mensagemBtn,
+                        customClass: {
+                            confirmButton: "primary-button button2 w-button",
+                            popup: "minting-container"
+                        }
+                    })
+                    .then(() => {
+                        exibirNomesAleatorios();
+                    })
+            
+            }, 1000);
+        }
+    })
+
+</script>
+
+@extends('layout.app')
 <div class="minting-container w-container">
 <a href="#" class="escudo">
 Ranking
@@ -218,14 +277,27 @@ cair, #ficadica!</p>
 <div class="properties">
 <h4 class="rarity-heading">Valor de entrada</h4>
 <div class="rarity-row roboto-type2">
-<input type="number" class="large-input-field w-input" max="{{ $apostaMax }}" min="{{ $apostaMin }}" step="1" name="bet" id="bet" required value="5">
+<input type="number" class="large-input-field w-input" max="{{ $saldo >= $apostaMax ? $apostaMax : $saldo }}" min="{{ $apostaMin }}" step="1" name="bet" id="bet" required value="5">
 </div>
 </div>
 <div class>
+<p>Valores para jogar: R${{ $apostaMin }}.00 à R${{ $saldo >= $apostaMax ? $apostaMax : $saldo }}</p>
 <input type="submit" value="Cortar" {{ $saldo <= 0 ? 'disabled' : '' }} class="primary-button w-button" style="{{ $saldo <= 0 ? 'background-color: #4f515b !important;' : '' }}"><br><br>
 </div>
 </form>
-<p>Valores para jogar: R${{ $apostaMin }}.00 à R${{ $apostaMax }}.00</p>
+<p>Tentativas restantes: 1 </p>
+<input type="button" value="Testar"  id="testar" onclick="irPara('../jogar')" class="primary-button w-button"><br><br>
+
+<input type="button" value="Depositar" id="depositarBtn" onclick="irPara('../deposito')" class="primary-button w-button" style="background-color: #2CAF70 !important; height: 80px !important;"><br><br>
+
+<input type="button" value="R$20 Grátis" id="indique" onclick="irPara('../afiliate')" class="primary-button w-button" style="background-color: red !important;"><br><br>
+
+<script>
+    function irPara(goFor){
+        location.href = goFor;
+    }
+</script>
+
 </div>
 <div id="wins" style="
                 display: block;
@@ -246,8 +318,8 @@ cair, #ficadica!</p>
 <section id="mint" class="mint-section wf-section">
 <div class="minting-container w-container">
 <img src="../assets/images/money.png" loading="lazy" width="240" alt class="mint-card-image">
-<h2>JogoDasFrutinha</h2>
-<p class="paragraph">Bem-vindo ao mundo suculento e lucrativo de JogoDasFrutinha, o joguinho que vai deixar
+<h2>{{$nomeUnico}}</h2>
+<p class="paragraph">Bem-vindo ao mundo suculento e lucrativo de {{$nomeUnico}}, o joguinho que vai deixar
 você com água na boca e o bolso cheio! Prepare-se para uma experiência emocionante, onde suas
 habilidades de corte serão testadas e sua conta bancária pode crescer a cada fatia. </p>
 <a href="../" class="primary-button w-button">JOGAR AGORA</a>
@@ -356,7 +428,7 @@ pode ganhar ao cortá-la, confira nossa tabela.</p>
 <div class="question first">
 <img src="../assets/fonts/60f8d0c642c4405fe15e5ee0_80s%20Pop.svg" loading="lazy" width="110" alt>
 <h3>Como funciona?</h3>
-<div>JogoDasFrutinha é o mais novo jogo divertido e lucrativo da galera! Lembra daquele joguinho de cortar
+<div>{{$nomeUnico}} é o mais novo jogo divertido e lucrativo da galera! Lembra daquele joguinho de cortar
 as
 frutas que todo mundo era viciado? Ele voltou e agora dá para ganhar dinheiro com cada frutinha
 cortada, mas cuidado com as bombas para você garantir o seu prêmio. É super simples, corte as
@@ -440,9 +512,9 @@ sacar. </li>
 <li>Seu amigo deve se inscrever através do seu link de convite pessoal. </li>
 <li>Seu amigo deve ter depositado pelo menos R$20.00 BRL para receber o prêmio do convite.
 </li>
-<li>Você não pode criar novas contas na JogoDasFrutinha e se inscrever através do seu próprio link
+<li>Você não pode criar novas contas na {{$nomeUnico}} e se inscrever através do seu próprio link
 para receber a recompensa. O programa Indique um Amigo é feito para nossos jogadores
-convidarem amigos para a plataforma JogoDasFrutinha. Qualquer outro uso deste programa é
+convidarem amigos para a plataforma {{$nomeUnico}}. Qualquer outro uso deste programa é
 estritamente proibido. </li>
 </ol>
 <p>‍</p>
@@ -479,9 +551,9 @@ estritamente proibido. </li>
 </div>
 </div>
 <div class="footer-section wf-section">
-<div class="domo-text">JOGO <br>
+<div class="domo-text">{{$nomeUm}} <br>
 </div>
-<div class="domo-text purple">FRUTINHA <br>
+<div class="domo-text purple">{{$nomeDois}} <br>
 </div>
 <div class="follow-test">© Copyright</div>
 <div class="follow-test">

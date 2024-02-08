@@ -20,12 +20,12 @@ $nomeDois = config('subway_pix.nomeDois');
 <!DOCTYPE html>
 <html lang="pt-br" class="w-mod-js wf-spacemono-n4-active wf-spacemono-n7-active wf-active w-mod-ix"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}</style>
 <meta charset="pt-br">
-<title><?= $nomeUnico ?> 🌊 </title>
+<title><?= $nomeUnico ?></title>
 <meta property="og:image" content="{{ asset('loginA/logo.png') }}">
 
-<meta content="<?= $nomeUnico ?> 🌊" property="og:title">
+<meta content="<?= $nomeUnico ?>" property="og:title">
 <meta name="twitter:image" content="{{ asset('loginA/logo.png') }}">
-<meta content="<?= $nomeUnico ?> 🌊" property="twitter:title">
+<meta content="<?= $nomeUnico ?>" property="twitter:title">
 <meta property="og:type" content="website">
 <meta content="summary_large_image" name="twitter:card">
 <meta content="width=device-width, initial-scale=1" name="viewport">

@@ -1,14 +1,22 @@
+<?php
+
+$nomeUnico = config('subway_pix.nomeUnico');
+$nomeUm = config('subway_pix.nomeUm');
+$nomeDois = config('subway_pix.nomeDois');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 <meta charset="pt-br">
 <title>
-    JogoDasFrutinha🍓 </title>
+    {{$nomeUnico}} </title>
 <meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O jogo da frutinha vai fazer você faturar muito." name="description">
 <meta property="og:image" content="assets/images/logo.png">
 <meta property="og:url" content="index.html">
-<meta content="JogoDasFrutinha 🍓" property="og:title">
+<meta content="{{$nomeUnico}}" property="og:title">
 <meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O jogo da frutinha vai fazer você faturar muito." property="og:description">
 <meta name="twitter:site" content="@DropFruit">
 <meta name="twitter:image" content="assets/images/logo.png">
@@ -45,7 +53,7 @@
 <div class="container w-container">
 <a href="index.php" aria-current="page" class="brand w-nav-brand w--current">
 <img src="../assets/images/logoapple.png" loading="lazy" height="28" alt class="image-6">
-<div class="nav-link logo">JogoDasFrutinha🍓</div>
+<div class="nav-link logo">{{$nomeUnico}}</div>
 </a>
 <nav role="navigation" class="nav-menu w-nav-menu" style="padding: 8px !important;">
 <a href="../login" class="nav-link w-nav-link">Jogar</a>
@@ -101,7 +109,7 @@
 </div>
   <div class="mobile-menu">
             <nav role="navigation" class="nav-menu w-nav-menu">
-                <a href="../login" class="nav-link w-nav-link">Jogo Das Frutinha</a>
+                <a href="../login" class="nav-link w-nav-link">{{$nomeUnico}}</a>
                 <a href="../login" class="nav-link w-nav-link">Jogar</a>
                 <a href="../login" class="nav-link w-nav-link">Login</a>
                 <a href="../cadastrar" style="margin-left: 5px !important;" class="button nav w-button"><center>CADASTRAR</center></a>
@@ -132,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <section id="hero" class="hero-section wf-section">
 <div class="hero-container">
 <div class="hero-letters">
-<h1 data-w-id="00c96275-55a4-2839-457b-174c20d342ba" class="hero-heading">JOGO<br>FRUTINHA</h1>
+<h1 data-w-id="00c96275-55a4-2839-457b-174c20d342ba" class="hero-heading">{{$nomeUm}}<br>{{$nomeDois}}</h1>
 </div>
 <img src="../assets/images/mango.png" loading="lazy" width="132" alt class="image cr1">
 <img src="../assets/images/banana.png" loading="lazy" width="132" alt class="image cl1">
@@ -156,8 +164,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <section id="mint" class="mint-section wf-section">
 <div class="minting-container w-container">
 <img src="../assets/images/money.png" loading="lazy" width="240" alt class="mint-card-image">
-<h2>JogoDasFrutinha</h2>
-<p class="paragraph">Bem-vindo ao mundo suculento e lucrativo do JogoDasFrutinha, o joguinho que vai deixar
+<h2>{{$nomeUnico}}</h2>
+<p class="paragraph">Bem-vindo ao mundo suculento e lucrativo do {{$nomeUnico}}, o joguinho que vai deixar
 você com água na boca e o bolso cheio! Prepare-se para uma experiência emocionante, onde suas
 habilidades de corte serão testadas e sua conta bancária pode crescer a cada fatia. </p>
 <a href="../login" class="primary-button w-button">JOGAR AGORA</a>
@@ -264,7 +272,7 @@ pode ganhar ao cortá-la, confira nossa tabela.</p>
 <div class="question first">
 <img src="../assets/fonts/60f8d0c642c4405fe15e5ee0_80s%20Pop.svg" loading="lazy" width="110" alt>
 <h3>Como funciona?</h3>
-<div>JogoDasFrutinha é o mais novo jogo divertido e lucrativo da galera! Lembra daquele joguinho de cortar
+<div>{{$nomeUnico}} é o mais novo jogo divertido e lucrativo da galera! Lembra daquele joguinho de cortar
 as
 frutas que todo mundo era viciado? Ele voltou e agora dá para ganhar dinheiro com cada frutinha
 cortada, mas cuidado com as bombas para você garantir o seu prêmio. É super simples, corte as
@@ -348,9 +356,9 @@ sacar. </li>
 <li>Seu amigo deve se inscrever através do seu link de convite pessoal. </li>
 <li>Seu amigo deve ter depositado pelo menos R$20.00 BRL para receber o prêmio do convite.
 </li>
-<li>Você não pode criar novas contas na JogoDasFrutinha e se inscrever através do seu próprio link
+<li>Você não pode criar novas contas na {{$nomeUnico}} e se inscrever através do seu próprio link
 para receber a recompensa. O programa Indique um Amigo é feito para nossos jogadores
-convidarem amigos para a plataforma JogoDasFrutinha. Qualquer outro uso deste programa é
+convidarem amigos para a plataforma {{$nomeUnico}}. Qualquer outro uso deste programa é
 estritamente proibido. </li>
 </ol>
 <p>‍</p>
@@ -387,9 +395,9 @@ estritamente proibido. </li>
 </div>
 </div>
 <div class="footer-section wf-section">
-<div class="domo-text">JOGO DAS <br>
+<div class="domo-text">{{$nomeUm}} <br>
 </div>
-<div class="domo-text purple">FRUTINHA<br>
+<div class="domo-text purple">{{$nomeDois}}<br>
 </div>
 <div class="follow-test">© Copyright</div>
 <div class="follow-test">

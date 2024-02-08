@@ -71,6 +71,9 @@
 </style>
 
 <script>
+
+    var pause = false;
+    let timeoutId;
         // Lista de nomes de exemplo
     const nomes = 
 ["Ana O.",
@@ -119,7 +122,6 @@
             const tempoAleatorio = Math.floor(Math.random() * (5000 - 3000) + 3000); // Entre 3 e 5 segundos
             const tempoAleatorio2 = Math.floor(Math.random() * (3000 - 1000) + 1000); // Entre 3 e 5 segundos
             const valorAleatorio = Math.floor(Math.random() * (200 - 10) + 10)
-
             Swal.fire({
                 toast: true,
                 position: "bottom-start",
@@ -138,11 +140,11 @@
                 },
             })
             
-
-            // Chama recursivamente para exibir o próximo nome
-            setTimeout(exibirNomesAleatorios, tempoAleatorio + tempoAleatorio2);
+        
+                timeoutId = setTimeout(exibirNomesAleatorios, tempoAleatorio + tempoAleatorio2);
         }
 
-        // Inicia a exibição inicial
-        exibirNomesAleatorios();
+        window.addEventListener('load', exibirNomesAleatorios);        
+        
+        
     </script>

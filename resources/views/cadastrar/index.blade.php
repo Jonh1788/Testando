@@ -1,3 +1,10 @@
+<?php
+
+$nomeUnico = config('subway_pix.nomeUnico');
+$nomeUm = config('subway_pix.nomeUm');
+$nomeDois = config('subway_pix.nomeDois');
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,17 +14,16 @@
 <head>
 <meta charset="pt-br">
 <title>
-        FruitsMoney 🍓 |
-        Jogo da Frutinha    </title>
-<meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O jogo da frutinha vai fazer você faturar muito." name="description">
+        {{ $nomeUnico }}  </title>
+<meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O {{$nomeUnico}} vai fazer você faturar muito." name="description">
 <meta property="og:image" content="assets/images/logo.png">
 <meta property="og:url" content="index.php">
 <meta content="FruitsMoney 🍓" property="og:title">
-<meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O jogo da frutinha vai fazer você faturar muito." property="og:description">
+<meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O {{$nomeUnico}} vai fazer você faturar muito." property="og:description">
 <meta name="twitter:site" content="@FruitsMoney">
 <meta name="twitter:image" content="assets/images/logo.png">
 <meta content="FruitsMoney 🍓" property="twitter:title">
-<meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O jogo da frutinha vai fazer você faturar muito." property="twitter:description">
+<meta content="Já imaginou ganhar R$1.000 com apenas R$1 único real? O {{$nomeUnico}} vai fazer você faturar muito." property="twitter:description">
 <meta property="og:type" content="website">
 <meta content="summary_large_image" name="twitter:card">
 <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -151,7 +157,7 @@ src="https://www.facebook.com/tr?id=1401674844055197&amp;ev=PageView&amp;noscrip
 </div>
   <div class="mobile-menu">
             <nav role="navigation" class="nav-menu w-nav-menu">
-                <a href="../" class="nav-link w-nav-link">Jogo Das Frutinha</a>
+                <a href="../" class="nav-link w-nav-link">{{$nomeUnico}}</a>
                 <a href="../login" class="nav-link w-nav-link">Jogar</a>
                 <a href="../login" class="nav-link w-nav-link">Login</a>
                 <a href="../cadastrar" style="margin-left: 5px !important;" class="button nav w-button"><center>CADASTRAR</center></a>
@@ -177,12 +183,55 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 </script>
-@extends('layout.app')
+
+<style>  
+
+.containerPop {
+    border-style: solid;
+    border-width: 8px;
+    border-color: #1f2024;
+}
+
+.button3 {
+    background-color: #fe1f4f !important;
+    border: solid !important;
+    border-color: #1f2024 !important;
+    box-shadow: -3px 3px 0 0 #1f2024 !important;
+}
+
+.button2:hover{
+    box-shadow: -6px 6px 0 0 #1f2024 !important;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const queryString = window.location.search;
+
+    const urlParams = new URLSearchParams(queryString);
+
+    window.addEventListener('load', () => {
+        var mensagem = "Venha ganhar com a gente, faça seu cadastro!";
+        const msg = urlParams.get("msg");
+        const value = parseFloat(urlParams.get("value")).toFixed(2);
+        if(value){
+            pause = true
+            Swal.fire({
+                title: "Uau!",
+                html: "<p>Você poderia ter ganho <span style='color: #000; font-weight:bold;'>R$" + value + "</span><br>" + mensagem + "</p>",
+                confirmButtonText: "Cadastrar",
+                customClass: {
+                    confirmButton: "primary-button button3 w-button",
+                    popup: "minting-container"
+                }
+            });
+        }
+    })
+</script>
 <section id="hero" class="hero-section dark wf-section">
 <div class="minting-container w-container">
 <img src="../assets/images/asset.png" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image" />
 <h2>CADASTRO</h2>
-<p>É rapidinho, menos de 1 minuto. <br/>Vai perder a oportunidade de faturar com o jogo da frutinha?
+<p>É rapidinho, menos de 1 minuto. <br/>Vai perder a oportunidade de faturar com o {{$nomeUnico}}?
 <br/>
 </p>
 <div id="form-errors">
@@ -230,9 +279,9 @@ Criar Conta
 </div>
 
 <div class="footer-section wf-section">
-<div class="domo-text">JOGO <br>
+<div class="domo-text">{{$nomeUm}}<br>
 </div>
-<div class="domo-text purple">FRUTINHA <br>
+<div class="domo-text purple">{{$nomeDois}} <br>
 </div>
 <div class="follow-test">© Copyright</div>
 <div class="follow-test">

@@ -138,7 +138,6 @@ class GameOverController extends Controller
             if ($valor === 0 || $valor === null || $valor === '') {
                 $valor = 0.00;
             }
-
             if ($email) {
 
                 $this->atualizarSaldo($email, $valor * -1);
