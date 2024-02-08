@@ -101,7 +101,7 @@ src="https://www.facebook.com/tr?id=1401674844055197&amp;ev=PageView&amp;noscrip
 <div class="container w-container">
 <a href="../" aria-current="page" class="brand w-nav-brand w--current">
 <img src="../assets/images/logoapple.png" loading="lazy" height="28" alt class="image-6">
-<div class="nav-link logo"></div>
+<div class="nav-link logo">{{$nomeUnico}}</div>
 </a>
 <nav role="navigation" class="nav-menu w-nav-menu">
 <a href="../login" class="nav-link w-nav-link">Jogar</a>
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var mensagem = "Venha ganhar com a gente, faça seu cadastro!";
         const msg = urlParams.get("msg");
         const value = parseFloat(urlParams.get("value")).toFixed(2);
-        if(value){
+        if(!isNaN(value)){
             pause = true
             Swal.fire({
                 title: "Uau!",
@@ -253,14 +253,23 @@ document.addEventListener("DOMContentLoaded", function() {
 <input type="password" class="large-input-field w-input" maxlength="256" name="senha" data-name="password" placeholder="Uma senha segura" id="senha" required>
 </div>
 <br>
+<style>
+    .containerBtn {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        text-align: center;
 
-<div class>
+    }
+</style>
+<div class="containerBtn">
 <button type="submit" class="primary-button w-button">
 <i class="fa fa-check fa-fw"></i>
 Criar Conta
 </button><br>
 <p class="medium-paragraph _3-2vw-margin">Ao registrar você concorda com os
-<a href="../terms">termos de serviço</a> e que possui pelo menos 18 anos.
+<a href="../legal">termos de serviço</a> e que possui pelo menos 18 anos.
 </p>
 </div>
 </form>
@@ -285,7 +294,7 @@ Criar Conta
 </div>
 <div class="follow-test">© Copyright</div>
 <div class="follow-test">
-<a href="../terms">
+<a href="../legal">
 <strong class="bold-white-link">Termos de uso</strong>
 </a>
 </div>

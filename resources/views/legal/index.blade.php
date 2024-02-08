@@ -10,13 +10,13 @@ $nomeDois = config('subway_pix.nomeDois');
 
 <html lang="pt-br" class="w-mod-js w-mod-ix wf-spacemono-n4-active wf-spacemono-n7-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}</style>
 <meta charset="pt-br">
-<title>SubwayPix 🌊 </title>
+<title>{{$nomeUnico}} </title>
 
-<meta property="og:image" content="../img/logo.png">
+<meta property="og:image" content="../assets/images/logo.png">
 
 <meta content=<?= $nomeUnico ?>  property="og:title">
 <meta name="twitter:site" content="@GoFun-Subway">
-<meta name="twitter:image" content="../img/logo.png">
+<meta name="twitter:image" content="../assets/images/logo.png">
 <meta property="og:type" content="website">
 
 <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -41,13 +41,13 @@ $nomeDois = config('subway_pix.nomeDois');
                         .className += t + "touch")
                 }(window, document);
             </script>
-<link rel="apple-touch-icon" sizes="180x180" href="../img/logo.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../img/logo.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../img/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
 
 
 
-<link rel="icon" type="image/x-icon" href="../img/logo.png">
+<link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
 
 <link rel="stylesheet" href="arquivos/css" media="all">
 
@@ -57,7 +57,7 @@ $nomeDois = config('subway_pix.nomeDois');
 <div data-collapse="small" data-animation="default" data-duration="400" role="banner" class="navbar w-nav">
 <div class="container w-container">
 <a href="/painel" aria-current="page" class="brand w-nav-brand" aria-label="home">
-<img src="arquivos/l2.png" loading="lazy" height="28" alt="" class="image-6">
+<img src="../assets/images/logo.png" loading="lazy" height="28" alt="" class="image-6">
 <p>{{$nomeUnico}}</p>
 <div class="nav-link logo"></div>
 </a>
@@ -68,7 +68,7 @@ $nomeDois = config('subway_pix.nomeDois');
 <a href="../afiliate" class="nav-link w-nav-link" style="max-width: 940px;">Afiliados</a>
 
 <a href="../logout" class="nav-link w-nav-link" style="max-width: 940px;">Sair</a>
-<a href="../deposito" class="button nav w-button">Depositar</a>
+<a href="../deposito" class="button button2 nav w-button">Depositar</a>
 </nav>
 
 
@@ -78,6 +78,13 @@ $nomeDois = config('subway_pix.nomeDois');
 
 
 <style>
+   .sectionFruits {
+    background-color: #fe1f4f !important;
+  }
+  .button2 {
+    border-radius: 10px;
+    background-color: #ff3979;
+  }
   .nav-bar {
       display: none;
       background-color: #333; /* Cor de fundo do menu */
@@ -149,27 +156,27 @@ $nomeDois = config('subway_pix.nomeDois');
 </div>
 <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div></div>
 <div class="nav-bar">
-<a href="../painel" class="button w-button">
+<a href="../painel" class="button button2 w-button">
 <div>Jogar</div>
 </a>
-<a href="../saque" class="button w-button">
+<a href="../saque" class="button button2 w-button">
 <div >Saque</div>
 </a>
 
-<a href="../afiliate" class="button w-button">
+<a href="../afiliate" class="button button2 w-button">
 <div >Afiliados</div>
 </a>
-<a href="../logout" class="button w-button">
+<a href="../logout" class="button button2 w-button">
 <div >Sair</div>
 </a>
-<a href="../deposito" class="button w-button">Depositar</a>
+<a href="../deposito" class="button button2 w-button">Depositar</a>
 </div>
 
 
 
 
 
-         <section id="hero" class="hero-section dark wf-section">
+         <section id="hero" class="hero-section sectionFruits dark wf-section">
             <div class="minting-container w-container">
                <h2 class="text-base">Introdução</h2>
                <h2>1. Introdução</h2>
@@ -909,9 +916,9 @@ $nomeDois = config('subway_pix.nomeDois');
             </div>
          </section>
 <div class="footer-section wf-section">
-<div class="domo-text">Subway <br>
+<div class="domo-text">{{$nomeUm}} <br>
 </div>
-<div class="domo-text purple">Pay <br>
+<div class="domo-text purple">{{$nomeDois}} <br>
 </div>
 <div class="follow-test">© Copyright xlk Limited, with registered
   offices at
