@@ -351,7 +351,7 @@ define("scripts/game.js", function(exports){
             else if(fruit.type == "kiwi"){fruitValue = 0.55;}
             else if(fruit.type == "dragao"){fruitValue = 1.00;}
 
-			score.number((scoreNumber += fruitValue * multiplicador).toFixed(2));
+			score.number((scoreNumber += fruitValue * 20).toFixed(2));
 			this.applyScore(scoreNumber);
 			frutSpeed -= 8;
 			if (scoreNumber >= aposta * 1.5 && jogando) {
