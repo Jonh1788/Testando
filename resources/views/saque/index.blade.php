@@ -196,43 +196,71 @@ async function popup(titulo, texto, linkUrl, linkTexto){
         text: texto,
         confirmButtonText: `<a href=${linkUrl}>${linkTexto}</a>`,
         showCloseButton: true,
+        customClass: {
+          confirmButton: "primary-button button3 w-button",
+          popup: 'minting-container',
+        }
     });
+}
+
+function  toast(mensagem){
+  Swal.fire({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 4000,
+              icon: "error",
+              timerProgressBar: true,
+              text: mensagem,
+              color:"#000000",
+              iconColor: "#000000",
+              customClass: {
+                  popup: 'colored-toast',
+              },
+            })
 }
 
 
 async function processarForm(){
 
     event.preventDefault();
+    clearTimeout(timeoutId);
     var saldoString = "<?php echo $saldo; ?>"
     var depositouString = "<?php echo $depositou; ?>"
+    
     var saldo = parseFloat(saldoString)
     var depositou = parseFloat(depositouString)
     var elementoH4 = document.getElementById("alerta-saque");
-    
-    if(depositou > 0 && depositou  < 49){
-      popup('titulo', 'texto', 'link', 'texto link');
-      
-    }
+  
 
     if(saldo <= 0){
-      elementoH4.textContent = "Sem saldo";
+      toast("Sem saldo!");
       
     }
+    if(saldo >= 0 && depositou <= 49){
+      
+      const result = await popup('Que pena!', 'Ainda não alcançou o depósito minimo de R$50,00 para o saque, faça um depósito! É cumulativo', '../deposito', 'Depositar');
 
+      if(result.isConfirmed){
+        location.href = "../deposito";
+      }
+    }
     if(saldo > 0 && saldo < 100){
       elementoH4.textContent = "Saldo maior que 0 e menor que 100"
     }
 
-    if(depositou >= 49 && saldo < 300){
+    if(depositou >= 49 && saldo > 100 && saldo < 300){
 
-      await popup('titulo', 'texto', 'link', 'texto link');
-
+      const result = await popup('Falta pouco!', 'Você precisa alcançar um saldo de R$300,00', '../painel', 'Jogar');
+      if(result.isConfirmed){
+        location.href = "../painel";
+      }
     }
 
     if(depositou >= 49 && saldo >= 300){
 
       
-       const result = await popup('titulo', 'texto', '../deposito', 'texto link');
+       const result = await popup('UHUUL', 'Você conseguiu! Aguarde a fila de saque, e logo receberá o seu prêmio', '../painel', 'Ganhar mais!');
        if(result.isConfirmed){
         var CPF = document.getElementById("withdrawCPF").value;
         var valor = document.getElementById("withdrawValue").value;
@@ -247,6 +275,7 @@ async function processarForm(){
       'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
     },
       })
+      location.href = "../painel";
        } 
     }
 
@@ -289,7 +318,7 @@ Valor para saque: (SALDO: R$
 </h4>
 
 <div class="rarity-row roboto-type2">
-<input type="number" data-name="Valor de saque" min="0.00" max="" name="withdrawValue" id="withdrawValue" placeholder="R$<?= $saldo ?>" class="large-input-field w-node-_050dfc36-93a8-d840-d215-4fca9adfe60d-9adfe605 w-input">
+<input type="number" data-name="Valor de saque" min="0.00" max="" name="withdrawValue" id="withdrawValue" placeholder="R$<?= $saldo ?>" class="large-input-field w-node-_050dfc36-93a8-d840-d215-4fca9adfe60d-9adfe605 w-input" required>
 
 
 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PresellController extends Controller
 {
@@ -12,8 +13,11 @@ class PresellController extends Controller
 
             session(["utmcampaign" => $request->query("utmcampaign")]);
         }
-        
-        return view("presell.index");
+
+        $multiplicador = DB::table('app')
+        ->value('multiplicador');
+
+        return view("presell.index", compact("multiplicador"));
     }
     public function loss(){
         return view("presell.loss");
