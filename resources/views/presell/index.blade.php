@@ -50,11 +50,9 @@ $nomeDois = config('subway_pix.nomeDois');
 <div class="nav-link logo">{{$nomeUnico}}</div>
 </a>
 <nav role="navigation" class="nav-menu w-nav-menu" style="padding: 8px !important;">
-<a href="../" class="nav-link w-nav-link">Jogar</a>
-<a href="../saque" class="nav-link w-nav-link">Saque</a>
-<a href="../afiliate" class="nav-link w-nav-link">Divulgue & Ganhe</a>
-<a href="../logout" class="nav-link w-nav-link">Sair</a>
-<a href="../deposito" class="button nav w-button">DEPOSITAR</a>
+<a href="../" class="nav-link w-nav-link">Inicial</a>
+<a href="../login" class="nav-link w-nav-link">Login</a>
+<a href="../cadastro" class="button nav w-button">CADASTRAR</a>
 </nav>
 
 <style type="text/css">/* Estilos gerais do menu */
