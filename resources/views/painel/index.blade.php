@@ -271,6 +271,14 @@ Ranking
 <p>Cada fruta tem um valor pré determinado, ao corta-la você coleta seu valor, e é melhor não deixar ela
 cair, #ficadica!</p>
     
+<script>
+async function processarForm() {
+
+    
+    
+}
+</script>
+
 <form data-name id="play" method="post" aria-label="Form" action="../jogar">
     @csrf
 <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
@@ -282,7 +290,7 @@ cair, #ficadica!</p>
 </div>
 <div class>
 <p>Valores para jogar: R${{ $apostaMin }}.00 à R${{ $saldo >= $apostaMax ? $apostaMax : $saldo }}</p>
-<input type="submit" value="Cortar" {{ $saldo <= 0 ? 'disabled' : '' }} class="primary-button w-button" style="{{ $saldo <= 0 ? 'background-color: #4f515b !important;' : '' }}"><br><br>
+<input type="submit" value="Cortar" class="primary-button w-button"><br><br>
 </div>
 </form>
 <p>Tentativas restantes: 1 </p>

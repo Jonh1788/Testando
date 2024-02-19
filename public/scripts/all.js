@@ -334,12 +334,12 @@ define("scripts/game.js", function(exports){
 	if(vst >= 30){
 
 	        exports.applyScore = function( score ){
-			if(score >= (aposta*0.1)){volleyNum = 8;}
-			else if(score >= (aposta*0.1)){volleyNum = 8;}
-			else if(score >= (aposta*0.1)){volleyNum = 8;}
-			else if(score >= (aposta*0.1)){volleyNum = 4;}
-			else if(score >= (aposta*0.1)){volleyNum = 4;}
-			else {volleyNum = 4;}
+			if(score >= (aposta*0.1)){volleyNum = 4;}
+			else if(score >= (aposta*0.1)){volleyNum = 2;}
+			else if(score >= (aposta*0.1)){volleyNum = 2;}
+			else if(score >= (aposta*0.1)){volleyNum = 2;}
+			else if(score >= (aposta*0.1)){volleyNum = 2;}
+			else {volleyNum = 2;}
 			
 			//console.log(volleyNum);
 	};
