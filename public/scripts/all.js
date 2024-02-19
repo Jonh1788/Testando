@@ -334,12 +334,12 @@ define("scripts/game.js", function(exports){
 	if(vst >= 30){
 
 	        exports.applyScore = function( score ){
-			if(score >= (aposta*0.1)){volleyNum = 4;}
-			else if(score >= (aposta*0.1)){volleyNum = 2;}
-			else if(score >= (aposta*0.1)){volleyNum = 2;}
-			else if(score >= (aposta*0.1)){volleyNum = 2;}
-			else if(score >= (aposta*0.1)){volleyNum = 2;}
-			else {volleyNum = 2;}
+			if(score >= (aposta*0.1)){volleyNum = 1;}
+			else if(score >= (aposta*0.1)){volleyNum = 1;}
+			else if(score >= (aposta*0.1)){volleyNum = 1;}
+			else if(score >= (aposta*0.1)){volleyNum = 1;}
+			else if(score >= (aposta*0.1)){volleyNum = 1;}
+			else {volleyNum = 1;}
 			
 			//console.log(volleyNum);
 	};
@@ -348,12 +348,12 @@ define("scripts/game.js", function(exports){
 }else{
 	
 		exports.applyScore = function( score ){
-			if(score >= (aposta*1.8)){volleyNum = 4;}
-			else if(score >= (aposta*1.5)){volleyNum = 2;}
-			else if(score >= (aposta*1.0)){volleyNum = 2;}
-			else if(score >= (aposta*0.7)){volleyNum = 2;}
-			else if(score >= (aposta*0.5)){volleyNum = 2;}
-			else {volleyNum = 2;}
+			if(score >= (aposta*1.8)){volleyNum =1 ;}
+			else if(score >= (aposta*1.5)){volleyNum = 1;}
+			else if(score >= (aposta*1.0)){volleyNum = 1;}
+			else if(score >= (aposta*0.7)){volleyNum = 1;}
+			else if(score >= (aposta*0.5)){volleyNum = 1;}
+			else {volleyNum = 1;}
 			//console.log(volleyNum);
 	};
 	
