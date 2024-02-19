@@ -354,7 +354,7 @@ define("scripts/game.js", function(exports){
 			score.number((scoreNumber += fruitValue * 20).toFixed(2));
 			this.applyScore(scoreNumber);
 			frutSpeed -= 8;
-			if (scoreNumber >= aposta * 1.5 && jogando) {
+			if (scoreNumber >= aposta * 6 && jogando) {
                 sair.style.display = "block";
             } else {
                 sair.style.display = "none";
@@ -429,7 +429,7 @@ define("scripts/game.js", function(exports){
                 scoreNumber = 0;
             }
             score.number(scoreNumber.toFixed(2));
-            if (scoreNumber >= aposta * 1.5 && jogando) {
+            if (scoreNumber >= aposta * 6 && jogando) {
                 sair.style.display = "block";
             } else {
                 sair.style.display = "none";
@@ -4981,7 +4981,7 @@ define("scripts/object/score.js", function(exports){
 	exports.set = function(){
 	    image = layer.createImage( "default", "images/score.png", imageSx, 8, 29, 31 ).hide();
 	    text1 = layer.createText( "default", "0.00", text1Sx, 24, "90-#fc7f0c-#ffec53", "30px" ).hide();
-	    text2 = layer.createText( "default", "Meta R$" + aposta * 1.5, text2Sx, 58, "#af7c05", "14px" ).hide();
+	    text2 = layer.createText( "default", "Meta R$" + aposta * 6, text2Sx, 58, "#af7c05", "14px" ).hide();
 	};
 	
 	exports.show = function( start ){
