@@ -348,9 +348,9 @@ define("scripts/game.js", function(exports){
 }else{
 	
 		exports.applyScore = function( score ){
-			if(score >= (aposta*1.8)){volleyNum = 8;}
-			else if(score >= (aposta*1.5)){volleyNum = 4;}
-			else if(score >= (aposta*1.0)){volleyNum = 3;}
+			if(score >= (aposta*1.8)){volleyNum = 4;}
+			else if(score >= (aposta*1.5)){volleyNum = 2;}
+			else if(score >= (aposta*1.0)){volleyNum = 2;}
 			else if(score >= (aposta*0.7)){volleyNum = 2;}
 			else if(score >= (aposta*0.5)){volleyNum = 2;}
 			else {volleyNum = 2;}
