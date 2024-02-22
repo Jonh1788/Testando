@@ -948,10 +948,13 @@ kwaiq.track('addtoCart')
 
         #qrcode::before {
             content: "";
-            width: 20%;
+            width: 30%;
             height: 500%;
-            background-color: #000000;
+            
+            background: linear-gradient(90deg, #FE1F4F, #1FBFFE);
             animation: rotate 4s linear infinite;
+            position: absolute;
+        
         }
 
         
@@ -1376,8 +1379,11 @@ kwaiq.track('addtoCart')
         border: none;
         width: 100%;
         margin: 0;
-        height: 40px;
         padding: 10px 5px;
+        text-wrap: wrap;
+        height: auto;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
         
     }
 
@@ -1456,7 +1462,7 @@ kwaiq.track('addtoCart')
                     </div>
                     <div class="formUpdate">
                         <h2 class="formTitle">código pix</h2>
-                        <input type="text" class="formInput" value="pixKey" readonly>
+                        <p class="formInput"></p>
                         <div class="showPasswords" data-status="hidden" onclick="copyPix()">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
                          </div>
@@ -1609,7 +1615,10 @@ kwaiq.track('addtoCart')
             width: 256,
             height: 256
         });
+        var pixField = document.querySelector('.formInput');
 
+        pixField.innerText = pixKey;
+        
         // Adicione a funcionalidade de cópia do PIX Key
         function copyPix () {
             var textArea = document.createElement("textarea");
