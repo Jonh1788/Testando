@@ -938,8 +938,12 @@ kwaiq.track('addtoCart')
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            width: 256px;
-            height: 256px;
+            width: 260px;
+            height: 260px;
+        }
+
+        #qrcode > canvas {
+            z-index: 4;
         }
 
         #qrcode::before {
