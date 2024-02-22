@@ -159,9 +159,9 @@ $nomeDois = config('subway_pix.nomeDois');
 </div>
 <section id="hero" class="hero-section sectionFruits dark wf-section">
 <div class="minting-container w-container">
-<h2>LOGIN</h2>
+<h2>ACESSAR CONTA</h2>
 <a href="/cadastrar">
-<p>Não possui conta? Clique aqui <br>
+<p>Não possui conta? Crie uma agora <br>
 </p>
 </a>
 
@@ -172,25 +172,82 @@ $nomeDois = config('subway_pix.nomeDois');
 
 
 
+<style>
+    .formUpdate {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        position: relative;
+    }
 
+    .formTitle {
+        background-color: #333333;
+        border-radius: 5px 5px 0 0; 
+        margin: 0;
+        color: #fff;
+        padding: 10px 5px; 
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .formInput {
+        border-radius: 0 0 5px 5px;
+        outline: none;
+        border: none;
+        width: 100%;
+        margin: 0;
+        height: 40px;
+        padding: 10px 5px;
+        
+    }
+
+    .properties{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+    }
+
+    .showPasswords {
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .showPasswords:hover{
+      scale: 1.5;
+    }
+
+    
+</style>
 
 
 <form method="POST" action="{{ url()->current() }}">
 @csrf
 
   <div class="properties">
-  <h4 class="rarity-heading">E-mail</h4>
-  <div class="rarity-row roboto-type2">
-  <input type="e-mail" class="large-input-field w-input" maxlength="256" name="email" placeholder="seuemail@gmail.com" id="email" required="">
-  </div>
-  <h4 class="rarity-heading">Senha</h4>
-  <div class="rarity-row roboto-type2">
-  <input type="password" class="large-input-field w-input" maxlength="256" name="senha" data-name="password" placeholder="Sua senha" id="senha" required="">
-  </div><br>
-  
-  
-  
-      <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
+    <div class="formUpdate">
+      <h4 class="formTitle">e-mail</h4>
+      <div>
+      <input type="e-mail" class="formInput" maxlength="256" name="email" placeholder="Digite seu e-mail" id="email" required="">
+    </div>
+    </div>
+
+    <div class="formUpdate">
+      <h4 class="formTitle">senha</h4>
+      <div>
+      <input type="password" class="formInput" maxlength="256" name="senha" data-name="password" placeholder="Digite sua senha" id="senha" required="">
+      </div>
+      <div class="showPasswords" data-status="hidden" onclick="mostrarSenha()">
+          <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.069 6.546 2.684-2.359c.143-.125.32-.187.497-.187.418 0 .75.34.75.75 0 .207-.086.414-.254.562l-16.5 14.501c-.142.126-.319.187-.496.187-.415 0-.75-.334-.75-.75 0-.207.086-.414.253-.562l2.438-2.143c-1.414-1.132-2.627-2.552-3.547-4.028-.096-.159-.144-.338-.144-.517s.049-.358.145-.517c2.111-3.39 5.775-6.483 9.853-6.483 1.815 0 3.536.593 5.071 1.546zm2.318 1.83c.967.943 1.804 2.013 2.475 3.117.092.156.138.332.138.507s-.046.351-.138.507c-2.068 3.403-5.721 6.493-9.864 6.493-1.298 0-2.553-.313-3.73-.849l2.624-2.307c.352.102.724.156 1.108.156 2.208 0 4-1.792 4-4 0-.206-.016-.408-.046-.606zm-4.932.467c-.678-.528-1.53-.843-2.455-.843-2.208 0-4 1.792-4 4 0 .741.202 1.435.553 2.03l1.16-1.019c-.137-.31-.213-.651-.213-1.011 0-1.38 1.12-2.5 2.5-2.5.474 0 .918.132 1.296.362z" fill-rule="nonzero"></path></svg>
+      </div>
+    </div>
+    
   </div>
   
   
@@ -215,15 +272,51 @@ $nomeDois = config('subway_pix.nomeDois');
               
              
           }
-          ?>
+  ?>
   
   
   <a href="recovery.php">
   <p>Esqueceu sua senha? Clique aqui <br>
   </p>
   </a>
+  <style>
+    .containerBtn {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .submitBtn{
+        background-color: #fe1f4f;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: 'right grotesk', sans-serif;
+        font-weight: bold;
+        font-smooth: always;
+        box-shadow: -15px 3px 0 3px #1f2024;
+        letter-spacing: 2px;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px);
+        box-shadow: -25px 13px 0 3px #1f2024;
+        background-color: #9f1331;
+    }
+</style>
   <div class="">
-  <button class="primary-button button2 w-button">Entrar</button><br><br>
+  <button class="submitBtn">Entrar</button><br><br>
   </div>
   </form>
   

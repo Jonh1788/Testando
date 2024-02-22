@@ -402,7 +402,10 @@ estritamente proibido. </li>
 <div class="follow-test">© Copyright</div>
 <div class="follow-test">
 <a href="../terms">
-<strong class="bold-white-link">Termos de uso</strong>
+<strong class="bold-white-link">Termos de uso</strong><br><br><a href="https://licensing-igaming-curacao.com/validator/6a7a2gb85a638923172d6c14c23hd5ca3domain=frutinhadopix.net/"><img src="https://i.ibb.co/XFMbv35/gaming-curacao.png"  width="234" alt="gaming-curacao" border="0"></a>
+</div>
+<div class="follow-test">contato@frutinhadopix.net</div>
+    </div>
 </a>
 </div>
 <div class="follow-test"><a href="#" class="__cf_email__" data-cfemail="c2a1adacb6a3b6ad82a4b0b7abb6b1afadaca7bbeca1adaf"></a></div>

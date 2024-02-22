@@ -50,9 +50,11 @@ $nomeDois = config('subway_pix.nomeDois');
 <div class="nav-link logo">{{$nomeUnico}}</div>
 </a>
 <nav role="navigation" class="nav-menu w-nav-menu" style="padding: 8px !important;">
-<a href="../" class="nav-link w-nav-link">Inicial</a>
-<a href="../login" class="nav-link w-nav-link">Login</a>
-<a href="../cadastro" class="button nav w-button">CADASTRAR</a>
+<a href="../" class="nav-link w-nav-link">Jogar</a>
+<a href="../saque" class="nav-link w-nav-link">Saque</a>
+<a href="../afiliate" class="nav-link w-nav-link">Divulgue & Ganhe</a>
+<a href="../logout" class="nav-link w-nav-link">Sair</a>
+<a href="../deposito" class="button nav w-button">DEPOSITAR</a>
 </nav>
 
 <style type="text/css">/* Estilos gerais do menu */
@@ -514,12 +516,10 @@ estritamente proibido. </li>
 <div class="follow-test">© Copyright</div>
 <div class="follow-test">
 <a href="../terms">
-<strong class="bold-white-link">Termos de uso</strong>
-</a>
+<strong class="bold-white-link">Termos de uso</strong><br><br><a href="https://licensing-igaming-curacao.com/validator/6a7a2gb85a638923172d6c14c23hd5ca3domain=frutinhadopix.net/"><img src="https://i.ibb.co/XFMbv35/gaming-curacao.png"  width="234" alt="gaming-curacao" border="0"></a>
 </div>
-<div class="follow-test"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="c2a1adacb6a3b6ad82a4b0b7abb6b1afadaca7bbeca1adaf">[email&#160;protected]</a></div>
-
-</div>
+<div class="follow-test">contato@frutinhadopix.net</div>
+    </div>
 
 
 </html>

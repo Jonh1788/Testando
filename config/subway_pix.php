@@ -2,8 +2,8 @@
 
 return [
     
-    'nomeUnico' => 'Subway Pix',
-    'nomeUm' => 'Subway',
-    'nomeDois' => 'Pix',
+    'nomeUnico' => 'Frutinha do Pix',
+    'nomeUm' => 'Frutinha',
+    'nomeDois' => 'do Pix',
 ];
 ?>

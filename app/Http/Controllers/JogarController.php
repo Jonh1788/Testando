@@ -20,7 +20,13 @@ class JogarController extends Controller
             ->value('multiplicador');
             
             $token = $request->_token ?  $request->_token : 0;
-            $aposta = $request->bet ? $request->bet : 0; 
+            $aposta = $request->bet ? $request->bet : 0;
+            $aposta = preg_replace('/[^\d,]/', '', $aposta);
+            $aposta = str_replace(",00", "", $aposta);
+            
+            if($saldo < $aposta){
+                return redirect("../painel")->with('error', 'Saldo insuficiente');
+            }
             $jogo = "../scripts/all.js";
             $email = $email || 0;
 

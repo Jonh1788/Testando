@@ -206,36 +206,196 @@ kwaiq.track('completeRegistration')
 
  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 
+ <style>
+
+    @media screen and (max-width: 479px){
+      .formUpdate {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+    .formUpdate {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .formTitle {
+        background-color: #333333;
+        border-radius: 5px 5px 0 0; 
+        margin: 0;
+        color: #fff;
+        padding: 10px 5px; 
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .formInput {
+        border-radius: 0 0 5px 5px;
+        outline: none;
+        border: none;
+        width: 100%;
+        margin: 0;
+        height: 40px;
+        padding: 10px 5px;
+        
+    }
+
+    .properties{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+    }
+
+    .showPasswords {
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .showPasswords:hover{
+      scale: 1.5;
+    }
+    
+    .containerBtn {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .submitBtn{
+        background-color: #fe1f4f;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: 'right grotesk', sans-serif;
+        font-weight: bold;
+        font-smooth: always;
+        box-shadow: -15px 3px 0 3px #1f2024;
+        letter-spacing: 2px;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px);
+        box-shadow: -25px 13px 0 3px #1f2024;
+        background-color: #9f1331;
+    }
+</style>
 
   <form  action="{{ url()->current() }}" method="POST" style="display: flex;  flex-direction: column;">
   @csrf
         <div class="properties">
-            <h4 class="rarity-heading">NOME</h4>
-            <div class="rarity-row roboto-type2">
-                <input class="large-input-field w-input" type="text" placeholder="Seu nome" id="name" name="name" required><br>
-            </div>
-            <h4 class="rarity-heading">CPF</h4>
-             <div class="rarity-row roboto-type2">
-            <input class="large-input-field w-input" maxlength="11" placeholder="Seu número de CPF" type="text" id="document" name="document" oninput="formatarCPF(this)" required><br>
+
+        <div class="formUpdate">
+          <h4 class="formTitle">nome</h4>
+          <div>
+              <input class="formInput" type="text" placeholder="Seu nome" id="name" name="name" required><br>
+          </div>
         </div>
-            <h4 class="rarity-heading">Valor para depósito</h4>
-            <div class="rarity-row roboto-type2">
-                <input type="number" class="large-input-field w-input money-mask" 
-                    maxlength="256" name="valor_transacao" id="valuedeposit" 
-                    placeholder="Valor aqui" 
-                    required min="<?php echo $depositoMinimo; ?>">
+
+        <div class="formUpdate">
+            <h4 class="formTitle">cpf</h4>
+            <div>
+              <input class="formInput" maxlength="11" placeholder="Seu número de CPF" type="text" id="document" name="document" oninput="formatarCPF(this)" required>
             </div>
+        </div>
+
+        <div class="formUpdate">
+          <h4 class="formTitle">valor para depósito</h4>
+          <div>
+              <input type="number" class="formInput" 
+                  maxlength="256" name="valor_transacao" id="valuedeposit" 
+                  placeholder="R${{ $depositoMinimo || 20}}" 
+                  required min="<?php echo $depositoMinimo; ?>">
+          </div>
+        </div>
+
         </div>
 
         <input type="hidden" name="valor_transacao_session" value="{{ session('valor_transacao', '') }}">
 
+  
+<style>
 
-<div class="button-container" style="margin: 0 auto;">
-        <button type="button" class="button button2 nav w-button" onclick="updateValue(20)">R$ 20<br>SEM BÔNUS</button>
-        <button type="button" class="button button2 nav w-button" onclick="updateValue(25)">R$ 25<br>R$75 BÔNUS</button>
+  @media screen and (max-width:479px) {
+    .button-container {
+      flex-wrap: wrap;
+    }
+  }
+  .button-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .escolhido {
+    background-color: #8EC83E !important;
+    color: #000000 !important;
+    font-weight: bold;
+    padding: 0 !important;
+    animation: pulse 1.5s infinite;
+  }
+
+  .textoEscolhido {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #333333;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
+    padding: 5px;
+  }
+
+  .mint-card-image {
+    animation: pulse 4s infinite;
+  }
+  
+  @keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    
+  }
+
+  50% {
+    transform: scale(1.0);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+
+}
+
+</style>
+<div class="button-container">
+        <button type="button" class="button button2 nav w-button" onclick="updateValue(20)">R$20<br>SEM BÔNUS</button>
+        <button type="button" class="button button2 nav w-button escolhido" onclick="updateValue(25)">
+        <p class="textoEscolhido">mais escolhido</p>
+        R$25<br>
+        R$75 BÔNUS</button>
         <br><br>
-        <button type="button" class="button button2 nav w-button" onclick="updateValue(30)">R$ 30<br>R$150 BÔNUS</button>
-        <button type="button" class="button button2 nav w-button" onclick="updateValue(50)">R$ 50<br>R$200 BÔNUS</button>
+        <button type="button" class="button button2 nav w-button" onclick="updateValue(30)">R$30<br>R$150 BÔNUS</button>
+        <button type="button" class="button button2 nav w-button" onclick="updateValue(50)">R$50<br>R$200 BÔNUS</button>
         <br><br>
     </div>
 
@@ -258,7 +418,7 @@ kwaiq.track('completeRegistration')
             document.getElementById('valuedeposit').value = value;
         }
     </script>
-        <input type="submit" id="submitButton" name="gerar_qr_code" value="Depositar via PIX" class="primary-button button2 w-button" style="margin: 0 auto;">
+        <input type="submit" id="submitButton" name="gerar_qr_code" value="Depositar via PIX" class="submitBtn" style="margin: 0 auto;">
     </form>
 
     <div id="qrcode"></div>

