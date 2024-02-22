@@ -327,7 +327,7 @@ kwaiq.track('completeRegistration')
           <div>
               <input type="number" class="formInput" 
                   maxlength="256" name="valor_transacao" id="valuedeposit" 
-                  placeholder="R${{ $depositoMinimo || 20}}" 
+                  placeholder="R$20" 
                   required min="<?php echo $depositoMinimo; ?>">
           </div>
         </div>
