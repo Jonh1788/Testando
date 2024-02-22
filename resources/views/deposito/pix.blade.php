@@ -942,7 +942,7 @@ kwaiq.track('addtoCart')
             height: 260px;
         }
 
-        #qrcode > canvas {
+        #qrcode > img {
             z-index: 4;
         }
 
