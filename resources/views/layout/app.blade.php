@@ -3,7 +3,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <style>
-
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
     .colored-toast {
         height: 55px;
         display: flex !important;

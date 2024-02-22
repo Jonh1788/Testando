@@ -58,6 +58,11 @@ $nomeDois = config('subway_pix.nomeDois');
 </nav>
 
 <style type="text/css">/* Estilos gerais do menu */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
 .nav-bar {
     display: flex;
     justify-content: space-between;

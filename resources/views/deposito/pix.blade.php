@@ -28,7 +28,13 @@ kwaiq.track('addtoCart')
         }</style>
 
 
-    <style type="text/css">.swal-icon--error {
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
+    .swal-icon--error {
             border-color: #f27474;
             -webkit-animation: animateErrorIcon .5s;
             animation: animateErrorIcon .5s
@@ -901,8 +907,11 @@ kwaiq.track('addtoCart')
         .divqr {
             align-items: center;
             padding: 20px;
-
+            width: 100% !important;
             background-color: #ffffff;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
 
         }
 
@@ -913,10 +922,41 @@ kwaiq.track('addtoCart')
             height: 100vh;
         }
 
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
         #qrcode {
             padding: 10px;
-            border: 5px solid #1fbffe;
             border-radius: 10px;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            width: 256px;
+            height: 256px;
+        }
+
+        #qrcode::before {
+            content: "";
+            width: 20%;
+            height: 500%;
+            background-color: #000000;
+            animation: rotate 4s linear infinite;
+        }
+
+        
+
+        #qrcode::after{
+            position: absolute;
+            content: '';
+            inset: 5px;
+            background-color: #fff;
         }
 
 
@@ -1231,11 +1271,33 @@ kwaiq.track('addtoCart')
         <a href="/deposito" class="button button2 w-button w--current">Depositar</a>
     </div>
 
+        <style>
+            @keyframes pulse {
 
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.05);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+                
+            }
+
+            .mint-card-image {
+                animation: pulse 2s infinite;
+                border: none;
+                box-shadow: 0 0 10px 0 #282982;
+            }
+        </style>
     <div id="deposito">
         <section id="hero" class="hero-section sectionFruits dark wf-section">
             <div class="minting-container w-container">
-                <img src="{{ asset('img/ok.webp') }}" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image">
+                <img src="{{ asset('payment.gif') }}" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image">
                 <h2>BÔNUS DE DEPÓSITO VÁLIDO
                     POR ATÉ
                     <spam id="countdown">
@@ -1278,19 +1340,129 @@ kwaiq.track('addtoCart')
 
                 </div>
                 
-                  <div class="divq">
-
-
-                    <div id="qr-code-text" ></div>
-                     <button id="copy-button">Copiar código PIX</button>
+                  <div class="divqr">
                     
-                     <br>
-                     <button class="redirectButton"id="redirectButton">Paguei</button>
-<br><br>
 
+                    <style>
+    .formUpdate {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
 
+    .formTitle {
+        background-color: #333333;
+        border-radius: 5px 5px 0 0; 
+        margin: 0;
+        color: #fff;
+        padding: 10px 5px; 
+        font-size: 16px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .formInput {
+        border-radius: 0 0 5px 5px;
+        outline: none;
+        border: none;
+        width: 100%;
+        margin: 0;
+        height: 40px;
+        padding: 10px 5px;
+        
+    }
+
+    .showPasswords {
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .showPasswords:hover{
+      scale: 1.1;
+    }
+    
+    .containerBtn {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .submitBtn{
+        background-color: #fe1f4f;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: 'right grotesk', sans-serif;
+        font-weight: bold;
+        font-smooth: always;
+        box-shadow: -15px 3px 0 3px #1f2024;
+        letter-spacing: 2px;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px);
+        box-shadow: -25px 13px 0 3px #1f2024;
+        background-color: #9f1331;
+    }
+
+    .waitPay{
+        background-color: #1FBFFE;
+        width: 95%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        animation: pulse 2s infinite;
+    }
+
+    .waitPay p{
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+    }
+                    </style>
+                    
+                    <br>
+                    <div class="waitPay">
+                        <p>
+                            AGUARDANDO PAGAMENTO
+                        </p>
+                    </div>
+                    <div class="formUpdate">
+                        <h2 class="formTitle">código pix</h2>
+                        <input type="text" class="formInput" value="pixKey" readonly>
+                        <div class="showPasswords" data-status="hidden" onclick="copyPix()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                         </div>
+                    </div>
+                    <button class="redirectButton"id="redirectButton">Paguei</button>
+                    <br><br>
+                    
+                    
                 </div>
-            <h2>Pague e será creditado na hora!</h2>
+                <h2>Pague e será creditado na hora!</h2>
             <h3>Como pagar?</h3>
             <p>1. Abra o aplicativo do seu banco e acesse a área Pix!</p>
             <p>2. Selecione a opção pagar com código Pix Copia e Cola</p>
@@ -1434,11 +1606,8 @@ kwaiq.track('addtoCart')
             height: 256
         });
 
-        // Exiba a chave PIX abaixo do QR code
-        document.getElementById('qr-code-text').innerText = "PIX Key: " + pixKey;
-
         // Adicione a funcionalidade de cópia do PIX Key
-        document.getElementById("copy-button").addEventListener("click", function () {
+        function copyPix () {
             var textArea = document.createElement("textarea");
             textArea.value = pixKey; // Adicione a chave PIX como valor
             document.body.appendChild(textArea);
@@ -1454,10 +1623,9 @@ kwaiq.track('addtoCart')
                     timerProgressBar: true,
                     text: "Código Copiado!",
             })
-        });
+        }
     } else {
-        // Caso a chave PIX não esteja presente, exiba uma mensagem de erro
-        document.getElementById('qr-code-text').innerText = 'Chave PIX não encontrada.';
+       // document.getElementById('qr-code-text').innerText = 'Chave PIX não encontrada.';
     }
 </script>
 

@@ -241,6 +241,11 @@ function formatarTelefone() {
 </script>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
     .formUpdate {
         display: flex;
         flex-direction: column;
@@ -349,7 +354,7 @@ function formatarTelefone() {
     <div class="formUpdate">
         <h4 class="formTitle">telefone</h4>
         <div>
-        <input type="tel" class="formInput" maxlength="256" name="telefone" data-name="nome" placeholder="Digite seu telefone" id="telefone" required pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" onchange="formatarTelefone()">
+        <input type="text" class="formInput" maxlength="256" name="telefone" data-name="nome" placeholder="Digite seu telefone" id="telefone" required onchange="formatarTelefone()">
         </div>
     </div>
 

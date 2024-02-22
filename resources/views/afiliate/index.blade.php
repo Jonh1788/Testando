@@ -20,6 +20,11 @@ $nomeDois = config('subway_pix.nomeDois');
     .wf-force-outline-none[tabindex="-1"]:focus {
       outline: none;
     }
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
   </style>
   <meta charset="pt-br">
   <title><?= $nomeUnico ?> </title>

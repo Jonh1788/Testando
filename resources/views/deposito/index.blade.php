@@ -207,7 +207,11 @@ kwaiq.track('completeRegistration')
  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 
  <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
     @media screen and (max-width: 479px){
       .formUpdate {
         width: 90%;
