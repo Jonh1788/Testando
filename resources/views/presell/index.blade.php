@@ -11,6 +11,24 @@ $nomeDois = config('subway_pix.nomeDois');
 <html lang="pt-br">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
+    
+<script>
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
+</script>
+<script>
+kwaiq.load('568739590765805616');
+kwaiq.page();
+</script>
+
+<script>
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
+</script>
+<script>
+kwaiq.load('576119148523565072');
+kwaiq.page();
+</script>
+    
+    
 <meta charset="pt-br">
 <title>
        {{ $nomeUnico }}   </title>
@@ -43,20 +61,6 @@ $nomeDois = config('subway_pix.nomeDois');
 </head>
 <body>
 <div>
-<div data-collapse="small" data-animation="default" data-duration="400" role="banner" class="navbar w-nav">
-<div class="container w-container" style="padding: 16px !important;">
-<a href="../" aria-current="page" class="brand w-nav-brand w--current">
-<img src="../assets/images/logoapple.png" loading="lazy" height="28" alt class="image-6">
-<div class="nav-link logo">{{$nomeUnico}}</div>
-</a>
-<nav role="navigation" class="nav-menu w-nav-menu" style="padding: 8px !important;">
-<a href="../" class="nav-link w-nav-link">Jogar</a>
-<a href="../saque" class="nav-link w-nav-link">Saque</a>
-<a href="../afiliate" class="nav-link w-nav-link">Divulgue & Ganhe</a>
-<a href="../logout" class="nav-link w-nav-link">Sair</a>
-<a href="../deposito" class="button nav w-button">DEPOSITAR</a>
-</nav>
-
 <style type="text/css">/* Estilos gerais do menu */
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     
@@ -98,26 +102,6 @@ $nomeDois = config('subway_pix.nomeDois');
     text-decoration: none;
 }
 </style>
-<div class="w-nav-button">
-</div>
-<div class="menu-button w-nav-button">
-<div class="icon w-icon-nav-menu"></div>
-</div>
-    
-</div>
-
-
-</div>
-  <div class="mobile-menu">
-            <nav role="navigation" class="nav-menu w-nav-menu">
-                <a href="../" class="nav-link w-nav-link">{{ $nomeUnico }}</a>
-                <a href="../cadastro" class="nav-link w-nav-link">Jogar</a>
-                <a href="../login" class="nav-link w-nav-link">Login</a>            
-                <a href="../cadastro" style="margin-left: 5px !important;" class="button nav w-button"><center>CADASTRAR</center></a>
-            </nav>
-        </div>
-    </div>
-</div>
  <script>
 document.addEventListener("DOMContentLoaded", function() {
     const menuButton = document.querySelector(".menu-button");
@@ -185,11 +169,65 @@ document.addEventListener("DOMContentLoaded", function() {
         font-size: 10px;
         margin-top: -6px;
     }
+
+    .saldo{
+        margin-bottom: 50px;
+        box-shadow: -3px 3px 4px 0 rgba(0,0,0,0.5);
+        border-radius: 5px 5px 0 0;
+        width: 120px;
+    }
+    .saldoTitle {
+        font-size: 16px;
+        margin: 0;
+        background-color: #1FC2FF;
+        color: #fff;
+        border-radius: 5px 5px 0 0;
+        padding: 0 5px;
+        text-align: left;
+    }
+
+    .saldoValue {
+        font-size: 20px;
+        margin: 0;
+        background-color: #4F7280;
+        color: #fff;
+        padding: 0 5px;
+        text-align: left;
+    }
+
+    .submitBtn{
+        background-color: #fe1f4f;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: 'right grotesk', sans-serif;
+        font-weight: bold;
+        font-smooth: always;
+        box-shadow: -15px 3px 0 3px #1f2024;
+        letter-spacing: 2px;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px);
+        box-shadow: -25px 13px 0 3px #1f2024;
+        background-color: #9f1331;
+        
+    }
     </style>
-<ul class="playersOn"></ul>
-<div style="position: absolute; top: 100px; width: 100%; line-height: 26px; color: #fff; z-index: 10; text-align: center;">
-</div>
+
 <section id="hero" class="hero-section dark wf-section">
+    <div class="saldo">
+        <p class="saldoTitle">Saldo:</p>
+        <p class="saldoValue">R$10,00</p>
+    </div>
 <style>
             a.escudo {
                 display: block;
@@ -233,23 +271,33 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-@extends('layout.app')
+
 <div class="minting-container w-container">
 <a href="#" class="escudo">
-Ranking
+
 <img src="../trophy.gif">
-Ranking
+
 </a>
 <h2>Cortar Frutas</h2>
-<p>Cada fruta tem um valor pré determinado, ao corta-la você coleta seu valor, e é melhor não deixar ela
-cair, #ficadica!</p>
+<p>Pronto para faturar cortando frutas? Cada corte é dinheiro no bolso! </p>
+<strong>⚠️ Não deixe nenhuma fruta cair</strong>
+                <strong>❌ Não colida com as bombas</strong>
+                <strong>✅ Saque imediatamente!</strong>
+
+
+<p style="margin-top: 20px;">Você tem 2 tentativas!
+
     
 <form data-name id="play" method="post" aria-label="Form" action="../jogar">
     @csrf
 <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
 <div class="properties testForm">
-    <input type="button" value="Testar"  id="testar" onclick="irPara('../jogar')" class="primary-button w-button"><br><br>
-    <p>Tentativas restantes: 2 </p>
+    <input type="button" value="Iniciar Jogo"  id="testar" onclick="irPara('../jogar')" class="submitBtn"><br><br>
+    
+    
+    <i style="font-size: 10px;">Teste agora o FruitPix!
+
+
 </div>
 </form>
 
@@ -275,7 +323,7 @@ cair, #ficadica!</p>
                 box-shadow: -3px 3px 0 0px #1f2024;
                 margin: -24px auto 0 auto;
                 z-index: 1000;
-            ">Usuários Online<br>20630</div>
+            ">Usuários Online<br>{{rand(10000,20000)}}</div>
 </section> 
 
 <section id="mint" class="mint-section wf-section">
@@ -484,35 +532,6 @@ estritamente proibido. </li>
 </div>
 </div>
 </div>
-<div class="faq-left">
-<img src="../assets/fonts/60f988c7c856f076b39f8fa4_head%2004.svg" loading="eager" width="238.5" alt class="faq-img">
-<img src="../assets/fonts/60f988c9402afc1dd3f629fe_head%2026.svg" loading="eager" width="234" alt class="faq-img _1">
-<img src="../assets/fonts/60f988c9bc584ead82ad8416_head%2029.svg" loading="lazy" width="234" alt class="faq-img _2">
-<img src="../assets/fonts/60f988c913f0ba744c9aa13e_head%2027.svg" loading="lazy" width="234" alt class="faq-img _3">
-<img src="../assets/fonts/60f988c9d3d37e14794eca22_head%2025.svg" loading="lazy" width="234" alt class="faq-img _1">
-<img src="../assets/fonts/60f988c98b7854f0327f5394_head%2024.svg" loading="lazy" width="234" alt class="faq-img _2">
-<img src="../assets/fonts/60f988c82f5c199c4d2f6b9f_head%2005.svg" loading="lazy" width="234" alt class="faq-img _3">
-</div>
-<div class="faq-right">
-<img src="../assets/fonts/60f988c88b7854b5127f5393_head%2023.svg" loading="eager" width="238.5" alt class="faq-img">
-<img src="../assets/fonts/60f988c8bf76d754b9c48573_head%2012.svg" loading="eager" width="234" alt class="faq-img _1">
-<img src="../assets/fonts/60f988c8f2b58f55b60d858f_head%2021.svg" loading="lazy" width="234" alt class="faq-img _2">
-<img src="../assets/fonts/60f988c8e83a994a38909bc4_head%2022.svg" loading="lazy" width="234" alt class="faq-img _3">
-<img src="../assets/fonts/60f988c8a97a7c125d72046d_head%2020.svg" loading="lazy" width="234" alt class="faq-img _1">
-<img src="../assets/fonts/60f988c8fbbbfe5fc68169e0_head%2014.svg" loading="lazy" width="234" alt class="faq-img _2">
-<img src="../assets/fonts/60f988c88b7854b35e7f5390_head%2018.svg" loading="lazy" width="234" alt class="faq-img _3">
-</div>
-<div class="faq-bottom">
-<img src="../assets/fonts/60f988c8ba5339712b3317c0_head%2016.svg" loading="lazy" width="234" alt class="faq-img _3">
-<img src="../assets/fonts/60f988c86e8603bce1c16a98_head%2017.svg" loading="lazy" width="234" alt class="faq-img">
-<img src="../assets/fonts/60f988c889b7b12755035f2f_head%2019.svg" loading="lazy" width="234" alt class="faq-img _1">
-</div>
-<div class="faq-top">
-<img src="../assets/fonts/60f988c8a97a7ccf6f72046a_head%2011.svg" loading="eager" width="234" alt class="faq-img _3">
-<img src="../assets/fonts/60f988c7fbbbfed6f88169df_head%2002.svg" loading="eager" width="234" alt class="faq-img">
-<img src="../assets/images/60f8dbc385822360571c62e0_icon-256w.png" loading="eager" width="234" alt class="faq-img _1">
-</div>
-</div>
 <div class="footer-section wf-section">
 <div class="domo-text">{{$nomeUm}} <br>
 </div>
@@ -526,5 +545,5 @@ estritamente proibido. </li>
 <div class="follow-test">contato@frutinhadopix.net</div>
     </div>
 
-
+</body>
 </html>
