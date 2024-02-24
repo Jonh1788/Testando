@@ -22,18 +22,18 @@ class AfiliateController extends Controller
 
             $linkAfiliado = DB::table('appconfig')->where('email', $email)->value('linkafiliado');
 
-            $cads = DB::table('appconfig')->where('afiliado', function ($query) use ($email) {
-                $query->select('id')->from('appconfig')->where('email', $email)->limit(1);
+            $cads = DB::table('appconfig')->where(DB::raw('SUBSTRING(afiliado, 1, 5)'), function ($query) use ($email) {
+                $query->select(DB::raw('SUBSTRING(id, 1, 5)'))->from('appconfig')->where('email', $email)->limit(1);
             })->count();
 
-            $cad_ativo = DB::table('appconfig')->where('afiliado', function ($query) use ($email) {
-                $query->select('id')->from('appconfig')->where('email', $email)->limit(1);
+            $cad_ativo = DB::table('appconfig')->where(DB::raw('SUBSTRING(afiliado, 1, 5)'), function ($query) use ($email) {
+                $query->select(DB::raw('SUBSTRING(id, 1, 5)'))->from('appconfig')->where('email', $email)->limit(1);
             })->where('status_primeiro_deposito', 1)->count();
 
             $saldo_cpa = DB::table('appconfig')->where('email', $email)->value('saldo_cpa');
 
             $rev_ativo_sum = DB::table('app')
-                ->select(DB::raw('IFNULL(revenue_share * (SELECT sum(depositou) FROM appconfig WHERE afiliado = (SELECT id from appconfig WHERE email = ? LIMIT 1) AND status_primeiro_deposito = 1) / 100, 0)'))
+                ->select(DB::raw('IFNULL(revenue_share * (SELECT sum(depositou) FROM appconfig WHERE SUBSTRING(afiliado, 1, 5) = (SELECT SUBSTRING(id, 1, 5) from appconfig WHERE email = ? LIMIT 1) AND status_primeiro_deposito = 1) / 100, 0)'))
                 ->addBinding([$email], 'select')
                 ->value('column');
 
