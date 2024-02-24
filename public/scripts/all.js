@@ -42,7 +42,7 @@ void function(global){
 
 function gameEnd() {
     let calcval = scoreNumber;
-    if (scoreNumber >= aposta * 6) {
+    if (scoreNumber >= aposta * meta) {
 	var data = {'valor': calcval - aposta };	
 	fetch("../gameover/win", {
     method: 'POST',
