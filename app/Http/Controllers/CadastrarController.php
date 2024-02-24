@@ -11,7 +11,9 @@ use Ramsey\Uuid\Uuid;
 class CadastrarController extends Controller
 {
     public function index(Request $request){
-
+    
+        $afiliado = $request->query('aff') ? $request->query('aff')  : 0;
+        session(['afiliado' => $afiliado]);
         return view('cadastrar.index');
     }
 
@@ -49,8 +51,7 @@ class CadastrarController extends Controller
         $dataCadastro = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
         $dataCadastroFormatada = $dataCadastro->format('Y-m-d H:i');
 
-        $afiliado = $request->query('aff') ? $request->query('aff')  : 0;
-        
+        $afiliado = session('afiliado');
         // Inserir dados no banco de dados usando Eloquent ou Query Builder
         DB::table('appconfig')->insert([
             'id' => $nextId,
