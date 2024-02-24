@@ -1,3 +1,4 @@
+
 <?php
 
 $nomeUnico = config('subway_pix.nomeUnico');
@@ -107,7 +108,7 @@ $nomeDois = config('subway_pix.nomeDois');
                 <a href="../" class="nav-link w-nav-link">{{ $nomeUnico }}</a>
                 <a href="../" class="nav-link w-nav-link">Jogar</a>
                 <a href="../saque" class="nav-link w-nav-link">Saque</a>
-                <a href="../afiliate" class="nav-link w-nav-link">Divulgue & Ganhe</a>
+                <a href="../afiliate" class="nav-link w-nav-link">Indique e Gahe</a>
                 <a href="../logout" class="nav-link w-nav-link">Sair</a>
                 <a href="../deposito" style="margin-left: 5px !important;" class="button nav w-button"><center>DEPOSITAR</center></a>
             </nav>
@@ -223,6 +224,28 @@ document.addEventListener("DOMContentLoaded", function() {
             .button2:hover{
                 box-shadow: -6px 6px 0 0 #1f2024 !important;
             }
+
+            .submitBtn > a {
+                color: #fff;
+            }
+
+            .pulsing {
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                0% {
+                    transform: translate(0, 0);
+                    box-shadow: -15px 3px 0 3px #1f2024;
+                }
+                50% {
+                    transform: translate(10px, -10px);
+                    box-shadow: -25px 13px 0 3px #1f2024;
+                }
+                100% {
+                    transform: translate(0, 0);
+                    box-shadow: -15px 3px 0 3px #1f2024;
+                }
+            }
             </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
@@ -236,11 +259,29 @@ document.addEventListener("DOMContentLoaded", function() {
         var mensagemBtn = saldo > 0 ? "Jogar!" : "<a href='../deposito' style='color: #fff;'>Depositar!";
         const msg = urlParams.get("msg");
         const value = parseFloat(urlParams.get("value")).toFixed(2);
+        const aposta = parseFloat(urlParams.get("aposta")).toFixed(2);
         if(!isNaN(value)){
             setTimeout(() => {
-                
-                
-                    clearTimeout(timeoutId);
+                clearTimeout(timeoutId);
+                if(msg == "win"){
+                    console.log('win')
+                    var mensagemWin = `<p>Você é um verdadeiro campeão e conseguiu ganhar <span style='color: #000; font-weight:bold;'>R$${value} </span> 
+                    </p> com sua aposta de R$${aposta}. Continue jogando para lucrar ainda mais! <span style='color: #000; font-weight:bold;'>#ficaadica</span>`;
+                    Swal.fire({
+                        title: "Parabéns!",
+                        html: mensagemWin,
+                        confirmButtonText: "Continuar",
+                        customClass: {
+                            confirmButton: "submitBtn pulsing",
+                            popup: "minting-container"
+                        }
+                    })
+                    .then(() => {
+                        exibirNomesAleatorios();
+                    })
+
+                    return;
+                }
                     Swal.fire({
                         title: "Uau!",
                         html: "<p>Você poderia ter ganho <span style='color: #000; font-weight:bold;'>R$" + value + "</span><br>" + mensagem + "</p>",
@@ -259,10 +300,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var error = @json($error);
         if(error){ 
-
-            
             clearTimeout(timeoutId);
-
             setTimeout(() => {
                 Swal.fire({
                     title: "Sem saldo!",
@@ -369,7 +407,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     .submitBtn{
-        background-color: #fe1f4f;
+        background-color: #fe1f4f !important;
         border: none;
         color: white;
         padding: 15px 32px;

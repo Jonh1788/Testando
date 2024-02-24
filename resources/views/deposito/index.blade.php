@@ -69,18 +69,18 @@ $nomeDois = config('subway_pix.nomeDois');
 !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
 </script>
 <script>
-kwaiq.load('571090245555851304');
+kwaiq.load('568739590765805616');
 kwaiq.page();
-kwaiq.track('completeRegistration')
+kwaiq.track('completeRegistration');
 </script>
 
 <script>
 !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
 </script>
 <script>
-kwaiq.load('559211402234703894');
+kwaiq.load('576119148523565072');
 kwaiq.page();
-kwaiq.track('completeRegistration')
+kwaiq.track();
 </script>
 
 <body>
@@ -281,7 +281,7 @@ kwaiq.track('completeRegistration')
         background-color: #fe1f4f;
         border: none;
         color: white;
-        padding: 15px 32px;
+        padding: 15px 10px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -341,17 +341,26 @@ kwaiq.track('completeRegistration')
 
   @media screen and (max-width:479px) {
     .button-container {
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr !important;
     }
   }
+
   .button-container {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    place-items: center;
     margin-bottom: 20px;
+    padding: 0 20px;
   }
+
+  .button2 {
+    margin: auto;
+    width: 100%;
+    border-radius: 5px 5px 8px 8px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+    }
 
   .escolhido {
     background-color: #8EC83E !important;
@@ -396,11 +405,10 @@ kwaiq.track('completeRegistration')
         <button type="button" class="button button2 nav w-button escolhido" onclick="updateValue(25)">
         <p class="textoEscolhido">mais escolhido</p>
         R$25<br>
-        R$75 BÔNUS</button>
-        <br><br>
+        R$75 BÔNUS
+        </button>
         <button type="button" class="button button2 nav w-button" onclick="updateValue(30)">R$30<br>R$150 BÔNUS</button>
         <button type="button" class="button button2 nav w-button" onclick="updateValue(50)">R$50<br>R$200 BÔNUS</button>
-        <br><br>
     </div>
 
          <script>
@@ -422,7 +430,20 @@ kwaiq.track('completeRegistration')
             document.getElementById('valuedeposit').value = value;
         }
     </script>
-        <input type="submit" id="submitButton" name="gerar_qr_code" value="Depositar via PIX" class="submitBtn" style="margin: 0 auto;">
+    <style>
+        .checkInput{
+           display: flex;
+           gap: 10px;
+           justify-content: center;
+           align-items: center;
+           margin-bottom: 20px;
+        }
+        </style>
+      <div class="checkInput">
+        <input type="checkbox"  name="" id="">Aceito o bônus de depósito </input>
+      </div>
+     <input type="submit" id="submitButton" name="gerar_qr_code" value="Depositar via PIX" class="submitBtn">
+
     </form>
 
     <div id="qrcode"></div>
@@ -498,7 +519,13 @@ kwaiq.track('completeRegistration')
 <div class="minting-container left w-container">
 <div class="w-layout-grid grid-2">
 <img src="{{ asset('depositoFiles/money.png')}}" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image v2">
-<div>
+
+<style>
+    .textCenter{
+        text-align: center;
+    }
+</style>
+<div class="textCenter">
 <h2>Indique um amigo e ganhe R$50 no PIX</h2>
 <h3>Como funciona?</h3>
 <p>Convide seus amigos que ainda não estão na plataforma. Você receberá R$50 por cada amigo que
@@ -509,6 +536,12 @@ significa que também não há limite para quanto você pode ganhar!</p>
 <p>O saldo é adicionado diretamente ao seu saldo no painel abaixo, com o qual você pode sacar
 via
 PIX.</p>
+<script>
+  function irPara(goFor){
+    location.href = goFor;
+  }
+</script>
+<input type="button" class="submitBtn" onclick="irPara('../afiliate')" value="EU QUERO R$50">
 
 </div>
 </div>

@@ -145,11 +145,11 @@
         // Função para exibir nomes aleatórios com tempo aleatório
         function exibirNomesAleatorios() {
             const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
-            const tempoAleatorio = Math.floor(Math.random() * (5000 - 3000) + 3000); // Entre 3 e 5 segundos
+            const tempoAleatorio = Math.floor(Math.random() * (10000 - 8000) + 8000); // Entre 3 e 5 segundos
             const tempoAleatorio2 = Math.floor(Math.random() * (3000 - 1000) + 1000); // Entre 3 e 5 segundos
             const valorAleatorio = Math.floor(Math.random() * (200 - 10) + 10)
-            const mensagem1 = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#016a13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> <p><strong>${nomeAleatorio}</strong> ganhou <strong>R$${valorAleatorio},00</strong> no fruits </p></div`
-            const mensagem2 = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#016a13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> <p><strong>${nomeAleatorio}</strong> acabou de sacar <strong>R$${valorAleatorio},00</strong> </p>`
+            const mensagem1 = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#016a13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> <p><strong>${nomeAleatorio}</strong> acaba de ganhar <strong>R$${valorAleatorio},00</strong> no jogo da fruta </p></div`
+            const mensagem2 = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#016a13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> <p><strong>${nomeAleatorio}</strong> realizou um saque de <strong>R$${valorAleatorio},00</strong> </p>`
             //escolher aleatoria entre mensagem1 e mensagem2
             const escolha = Math.floor(Math.random() * 2);
 
@@ -157,7 +157,7 @@
                 toast: true,
                 position: "bottom-start",
                 showConfirmButton: false,
-                timer: tempoAleatorio,
+                timer: tempoAleatorio - 2000,
                 timerProgressBar: true,
                 html: escolha == 0 ? mensagem1 : mensagem2,
                 color:"#000000",
