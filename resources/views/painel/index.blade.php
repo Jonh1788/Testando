@@ -517,7 +517,7 @@ async function processarForm() {
 
     <div>
         <p>Jogue com Dinheiro Real </p>
-        <input type="button" value="Depositar" class="primary-button w-button submitBtn" style="background-color: #00FF00;" onclick="irPara('../deposito')"><br><br>
+        <input type="button" value="Depositar" class="primary-button w-button submitBtn" style="background-color: #00FF00 !important;" onclick="irPara('../deposito')"><br><br>
     </div>
 
     <div>
