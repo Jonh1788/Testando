@@ -104,4 +104,5 @@ Route::get('/adm/depositos',[AdmController::class,'depositos']);
 Route::get('/adm/utm',[AdmController::class,'utm']);
 Route::get('/seedDatabase',[SeederController::class,'runSeeder']);
 Route::get('/legal',[PainelController::class,'legal']);
-
+Route::get('/adm/gateway',[AdmController::class,'gateway']);
+Route::post('/adm/gatewayUpdate',[AdmController::class,'gatewayUpdate']);

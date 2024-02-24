@@ -6,6 +6,8 @@ $nomeDois = config('subway_pix.nomeDois');
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -60,21 +62,22 @@ $nomeDois = config('subway_pix.nomeDois');
 <script type="a54c1f21f98644bc47b03e86-text/javascript">
 	var _site_url = location.origin || "https://fruitsmoney.com";
 </script>
-<script type="a54c1f21f98644bc47b03e86-text/javascript">
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"_esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this._spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="../s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="../s1.kwai.net/kos/s101/nlav11187/pixel/events81f7.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
+<script>
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
 </script>
-<script type="a54c1f21f98644bc47b03e86-text/javascript">
-kwaiq.load('525929379047415830');
-kwaiq.instance('525929379047415830').track('contentView')
+<script>
+kwaiq.load('568739590765805616');
 kwaiq.page();
+kwaiq.track('addToCart');
 </script>
-<script type="a54c1f21f98644bc47b03e86-text/javascript">
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"_esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this._spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="../s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="../s1.kwai.net/kos/s101/nlav11187/pixel/events81f7.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
+
+<script>
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
 </script>
-<script type="a54c1f21f98644bc47b03e86-text/javascript">
-kwaiq.load('525929829264007210');
-kwaiq.instance('525929829264007210').track('contentView') 
+<script>
+kwaiq.load('576119148523565072');
 kwaiq.page();
+kwaiq.track();
 </script>
 
 <script type="a54c1f21f98644bc47b03e86-text/javascript">
@@ -210,14 +213,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(queryString);
 
     window.addEventListener('load', () => {
-        var mensagem = "Venha ganhar com a gente, faça seu cadastro!";
+        var mensagem = " no seu primeiro deposito. Venha ganhar com a gente, <span style='color: #000; font-weight:bold;'> faça seu cadastro!";
         const msg = urlParams.get("msg");
         const value = parseFloat(urlParams.get("value")).toFixed(2);
         if(!isNaN(value)){
             pause = true
             Swal.fire({
-                title: "Uau!",
-                html: "<p>Você poderia ter ganho <span style='color: #000; font-weight:bold;'>R$" + value + "</span><br>" + mensagem + "</p>",
+                title: "PARABÉNS!",
+                html: "<p>Uhuuul, como você é bom! Você já ganhou <span style='color: #000; font-weight:bold;'>R$" + value + "</span>" + mensagem + "</p>",
                 confirmButtonText: "Cadastrar",
                 customClass: {
                     confirmButton: "primary-button button3 w-button",
@@ -227,33 +230,73 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
 </script>
-<section id="hero" class="hero-section dark wf-section">
-<div class="minting-container w-container">
-<img src="../assets/images/asset.png" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image" />
-<h2>CADASTRO</h2>
-<p>É rapidinho, menos de 1 minuto. <br/>Vai perder a oportunidade de faturar com o {{$nomeUnico}}?
-<br/>
-</p>
-<div id="form-errors">
-</div>
-<form action='{{ url()->current() }}' method="POST">
-@csrf
-<div class="properties">
-<h4 class="rarity-heading">Nome</h4>
-<div class="rarity-row roboto-type2">
-<input type="text" class="large-input-field w-input" maxlength="256" name="name" placeholder="Digite seu nome"  required>
-<input type="hidden" name="indicacao" value="">
-</div>
-<h4 class="rarity-heading">E-mail</h4>
-<div class="rarity-row roboto-type2">
-<input type="e-mail" class="large-input-field w-input" maxlength="256" name="email" placeholder="seuemail@gmail.com" id="email" required>
-</div>
-<h4 class="rarity-heading">Senha</h4>
-<div class="rarity-row roboto-type2">
-<input type="password" class="large-input-field w-input" maxlength="256" name="senha" data-name="password" placeholder="Uma senha segura" id="senha" required>
-</div>
-<br>
+
+<script>
+function formatarTelefone() {
+    const telefoneInput = document.getElementById('telefone');
+    const telefone = telefoneInput.value.replace(/\D/g, '');
+    const regex = /^(\d{2})(\d{5})(\d{4})$/;
+    const telefoneFormatado = telefone.replace(regex, '($1) $2-$3');
+    telefoneInput.value = telefoneFormatado;
+}
+</script>
+
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
+    .formUpdate {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .formTitle {
+        background-color: #333333;
+        border-radius: 5px 5px 0 0; 
+        margin: 0;
+        color: #fff;
+        padding: 10px 5px; 
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .formInput {
+        border-radius: 0 0 5px 5px;
+        outline: none;
+        border: none;
+        width: 100%;
+        margin: 0;
+        height: 40px;
+        padding: 10px 5px;
+        
+    }
+
+    .properties{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+    }
+
+    .showPasswords {
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .showPasswords:hover{
+      scale: 1.5;
+    }
+    
     .containerBtn {
         display: flex;
         flex-direction: column;
@@ -262,14 +305,107 @@ document.addEventListener("DOMContentLoaded", function() {
         text-align: center;
 
     }
+
+    .submitBtn{
+        background-color: #fe1f4f;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: 'right grotesk', sans-serif;
+        font-weight: bold;
+        font-smooth: always;
+        box-shadow: -15px 3px 0 3px #1f2024;
+        letter-spacing: 2px;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px);
+        box-shadow: -25px 13px 0 3px #1f2024;
+        background-color: #9f1331;
+    }
 </style>
+
+<section id="hero" class="hero-section dark wf-section">
+<div class="minting-container w-container">
+<img src="../assets/images/asset.png" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image" />
+<h2>CADASTRO</h2>
+<p>Você garantiu acesso ao jogo secreto do Fruit Pix. <br/>Corte suas frutas para aumentar os seus ganhos em dinheiro e saque instantaneamente em seu PIX!
+<br/>
+</p>
+<div id="form-errors">
+</div>
+<form action='{{ url()->current() }}' method="POST">
+@csrf
+<div class="properties">
+    <div class="formUpdate">
+        <h4 class="formTitle">e-mail</h4>
+        <div>
+        <input type="e-mail" class="formInput" maxlength="256" name="email" placeholder="Digite seu e-mail" id="email" required>
+        </div>
+    </div>
+
+    <div class="formUpdate">
+        <h4 class="formTitle">telefone</h4>
+        <div>
+        <input type="text" class="formInput" maxlength="256" name="telefone" data-name="nome" placeholder="Digite seu telefone" id="telefone" required onchange="formatarTelefone()">
+        </div>
+    </div>
+
+    <div class="formUpdate">
+        <h4 class="formTitle">senha</h4>
+        <div>
+        <input type="password" class="formInput" maxlength="256" name="senha" data-name="password" placeholder="Digite sua senha" id="senha" required>
+        </div>
+        <div class="showPasswords" data-status="hidden" onclick="mostrarSenha('senha')">
+          <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.069 6.546 2.684-2.359c.143-.125.32-.187.497-.187.418 0 .75.34.75.75 0 .207-.086.414-.254.562l-16.5 14.501c-.142.126-.319.187-.496.187-.415 0-.75-.334-.75-.75 0-.207.086-.414.253-.562l2.438-2.143c-1.414-1.132-2.627-2.552-3.547-4.028-.096-.159-.144-.338-.144-.517s.049-.358.145-.517c2.111-3.39 5.775-6.483 9.853-6.483 1.815 0 3.536.593 5.071 1.546zm2.318 1.83c.967.943 1.804 2.013 2.475 3.117.092.156.138.332.138.507s-.046.351-.138.507c-2.068 3.403-5.721 6.493-9.864 6.493-1.298 0-2.553-.313-3.73-.849l2.624-2.307c.352.102.724.156 1.108.156 2.208 0 4-1.792 4-4 0-.206-.016-.408-.046-.606zm-4.932.467c-.678-.528-1.53-.843-2.455-.843-2.208 0-4 1.792-4 4 0 .741.202 1.435.553 2.03l1.16-1.019c-.137-.31-.213-.651-.213-1.011 0-1.38 1.12-2.5 2.5-2.5.474 0 .918.132 1.296.362z" fill-rule="nonzero"></path></svg>
+      </div>
+    </div>
+
+    <div class="formUpdate">
+        <h4 class="formTitle">confirmação de senha</h4>
+        <div>
+        <input type="password" class="formInput" maxlength="256" name="confirm_senha" data-name="password" placeholder="Confirme sua senha" id="confirm_senha" required>
+        </div>
+        <div class="showPasswords" data-status="hidden" onclick="mostrarSenha()">
+          <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.069 6.546 2.684-2.359c.143-.125.32-.187.497-.187.418 0 .75.34.75.75 0 .207-.086.414-.254.562l-16.5 14.501c-.142.126-.319.187-.496.187-.415 0-.75-.334-.75-.75 0-.207.086-.414.253-.562l2.438-2.143c-1.414-1.132-2.627-2.552-3.547-4.028-.096-.159-.144-.338-.144-.517s.049-.358.145-.517c2.111-3.39 5.775-6.483 9.853-6.483 1.815 0 3.536.593 5.071 1.546zm2.318 1.83c.967.943 1.804 2.013 2.475 3.117.092.156.138.332.138.507s-.046.351-.138.507c-2.068 3.403-5.721 6.493-9.864 6.493-1.298 0-2.553-.313-3.73-.849l2.624-2.307c.352.102.724.156 1.108.156 2.208 0 4-1.792 4-4 0-.206-.016-.408-.046-.606zm-4.932.467c-.678-.528-1.53-.843-2.455-.843-2.208 0-4 1.792-4 4 0 .741.202 1.435.553 2.03l1.16-1.019c-.137-.31-.213-.651-.213-1.011 0-1.38 1.12-2.5 2.5-2.5.474 0 .918.132 1.296.362z" fill-rule="nonzero"></path></svg>
+      </div>
+    </div>
+
+<br>
+<script>
+      function mostrarSenha(passwordField) {
+        if(passwordField === "senha"){
+          var senhaInput = document.getElementById('senha');
+        }
+        else{
+            var senhaInput = document.getElementById('confirm_senha');
+        }
+          if (senhaInput.type === 'password') {
+              senhaInput.type = 'text';
+          } else {
+              senhaInput.type = 'password';
+          }
+      }
+</script>
+
 <div class="containerBtn">
-<button type="submit" class="primary-button w-button">
+<button type="submit" class="submitBtn">
 <i class="fa fa-check fa-fw"></i>
 Criar Conta
 </button><br>
 <p class="medium-paragraph _3-2vw-margin">Ao registrar você concorda com os
 <a href="../legal">termos de serviço</a> e que possui pelo menos 18 anos.
+</p>
+<p class="medium-paragraph _3-2vw-margin">Já possui uma conta?
+<a href="../login">Clique aqui</a>
 </p>
 </div>
 </form>

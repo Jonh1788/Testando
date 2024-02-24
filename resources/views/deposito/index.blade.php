@@ -69,18 +69,18 @@ $nomeDois = config('subway_pix.nomeDois');
 !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
 </script>
 <script>
-kwaiq.load('571090245555851304');
+kwaiq.load('568739590765805616');
 kwaiq.page();
-kwaiq.track('completeRegistration')
+kwaiq.track('completeRegistration');
 </script>
 
 <script>
 !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
 </script>
 <script>
-kwaiq.load('559211402234703894');
+kwaiq.load('576119148523565072');
 kwaiq.page();
-kwaiq.track('completeRegistration')
+kwaiq.track();
 </script>
 
 <body>
@@ -206,37 +206,209 @@ kwaiq.track('completeRegistration')
 
  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 
+ <style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
+    @media screen and (max-width: 479px){
+      .formUpdate {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+    .formUpdate {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .formTitle {
+        background-color: #333333;
+        border-radius: 5px 5px 0 0; 
+        margin: 0;
+        color: #fff;
+        padding: 10px 5px; 
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .formInput {
+        border-radius: 0 0 5px 5px;
+        outline: none;
+        border: none;
+        width: 100%;
+        margin: 0;
+        height: 40px;
+        padding: 10px 5px;
+        
+    }
+
+    .properties{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+    }
+
+    .showPasswords {
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .showPasswords:hover{
+      scale: 1.5;
+    }
+    
+    .containerBtn {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .submitBtn{
+        background-color: #fe1f4f;
+        border: none;
+        color: white;
+        padding: 15px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: 'right grotesk', sans-serif;
+        font-weight: bold;
+        font-smooth: always;
+        box-shadow: -15px 3px 0 3px #1f2024;
+        letter-spacing: 2px;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px);
+        box-shadow: -25px 13px 0 3px #1f2024;
+        background-color: #9f1331;
+    }
+</style>
 
   <form  action="{{ url()->current() }}" method="POST" style="display: flex;  flex-direction: column;">
   @csrf
         <div class="properties">
-            <h4 class="rarity-heading">NOME</h4>
-            <div class="rarity-row roboto-type2">
-                <input class="large-input-field w-input" type="text" placeholder="Seu nome" id="name" name="name" required><br>
-            </div>
-            <h4 class="rarity-heading">CPF</h4>
-             <div class="rarity-row roboto-type2">
-            <input class="large-input-field w-input" maxlength="11" placeholder="Seu número de CPF" type="text" id="document" name="document" oninput="formatarCPF(this)" required><br>
+
+        <div class="formUpdate">
+          <h4 class="formTitle">nome</h4>
+          <div>
+              <input class="formInput" type="text" placeholder="Seu nome" id="name" name="name" required><br>
+          </div>
         </div>
-            <h4 class="rarity-heading">Valor para depósito</h4>
-            <div class="rarity-row roboto-type2">
-                <input type="number" class="large-input-field w-input money-mask" 
-                    maxlength="256" name="valor_transacao" id="valuedeposit" 
-                    placeholder="Valor aqui" 
-                    required min="<?php echo $depositoMinimo; ?>">
+
+        <div class="formUpdate">
+            <h4 class="formTitle">cpf</h4>
+            <div>
+              <input class="formInput" maxlength="11" placeholder="Seu número de CPF" type="text" id="document" name="document" oninput="formatarCPF(this)" required>
             </div>
+        </div>
+
+        <div class="formUpdate">
+          <h4 class="formTitle">valor para depósito</h4>
+          <div>
+              <input type="number" class="formInput" 
+                  maxlength="256" name="valor_transacao" id="valuedeposit" 
+                  placeholder="R$20" 
+                  required min="<?php echo $depositoMinimo; ?>">
+          </div>
+        </div>
+
         </div>
 
         <input type="hidden" name="valor_transacao_session" value="{{ session('valor_transacao', '') }}">
 
+  
+<style>
 
-<div class="button-container" style="margin: 0 auto;">
-        <button type="button" class="button button2 nav w-button" onclick="updateValue(20)">R$ 20<br>SEM BÔNUS</button>
-        <button type="button" class="button button2 nav w-button" onclick="updateValue(25)">R$ 25<br>R$75 BÔNUS</button>
-        <br><br>
-        <button type="button" class="button button2 nav w-button" onclick="updateValue(30)">R$ 30<br>R$150 BÔNUS</button>
-        <button type="button" class="button button2 nav w-button" onclick="updateValue(50)">R$ 50<br>R$200 BÔNUS</button>
-        <br><br>
+  @media screen and (max-width:479px) {
+    .button-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr !important;
+    }
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    place-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  .button2 {
+    margin: auto;
+    width: 100%;
+    border-radius: 5px 5px 8px 8px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+    }
+
+  .escolhido {
+    background-color: #8EC83E !important;
+    color: #000000 !important;
+    font-weight: bold;
+    padding: 0 !important;
+    animation: pulse 1.5s infinite;
+  }
+
+  .textoEscolhido {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #333333;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
+    padding: 5px;
+  }
+
+  .mint-card-image {
+    animation: pulse 4s infinite;
+  }
+  
+  @keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    
+  }
+
+  50% {
+    transform: scale(1.0);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+
+}
+
+</style>
+<div class="button-container">
+        <button type="button" class="button button2 nav w-button" onclick="updateValue(20)">R$20<br>SEM BÔNUS</button>
+        <button type="button" class="button button2 nav w-button escolhido" onclick="updateValue(25)">
+        <p class="textoEscolhido">mais escolhido</p>
+        R$25<br>
+        R$75 BÔNUS
+        </button>
+        <button type="button" class="button button2 nav w-button" onclick="updateValue(30)">R$30<br>R$150 BÔNUS</button>
+        <button type="button" class="button button2 nav w-button" onclick="updateValue(50)">R$50<br>R$200 BÔNUS</button>
     </div>
 
          <script>
@@ -258,7 +430,20 @@ kwaiq.track('completeRegistration')
             document.getElementById('valuedeposit').value = value;
         }
     </script>
-        <input type="submit" id="submitButton" name="gerar_qr_code" value="Depositar via PIX" class="primary-button button2 w-button" style="margin: 0 auto;">
+    <style>
+        .checkInput{
+           display: flex;
+           gap: 10px;
+           justify-content: center;
+           align-items: center;
+           margin-bottom: 20px;
+        }
+        </style>
+      <div class="checkInput">
+        <input type="checkbox"  name="" id="">Aceito o bônus de depósito </input>
+      </div>
+     <input type="submit" id="submitButton" name="gerar_qr_code" value="Depositar via PIX" class="submitBtn">
+
     </form>
 
     <div id="qrcode"></div>
@@ -334,7 +519,13 @@ kwaiq.track('completeRegistration')
 <div class="minting-container left w-container">
 <div class="w-layout-grid grid-2">
 <img src="{{ asset('depositoFiles/money.png')}}" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image v2">
-<div>
+
+<style>
+    .textCenter{
+        text-align: center;
+    }
+</style>
+<div class="textCenter">
 <h2>Indique um amigo e ganhe R$50 no PIX</h2>
 <h3>Como funciona?</h3>
 <p>Convide seus amigos que ainda não estão na plataforma. Você receberá R$50 por cada amigo que
@@ -345,6 +536,12 @@ significa que também não há limite para quanto você pode ganhar!</p>
 <p>O saldo é adicionado diretamente ao seu saldo no painel abaixo, com o qual você pode sacar
 via
 PIX.</p>
+<script>
+  function irPara(goFor){
+    location.href = goFor;
+  }
+</script>
+<input type="button" class="submitBtn" onclick="irPara('../afiliate')" value="EU QUERO R$50">
 
 </div>
 </div>

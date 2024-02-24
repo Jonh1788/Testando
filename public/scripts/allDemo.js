@@ -1,4 +1,4 @@
-﻿var screenW = screen.width;
+var screenW = screen.width;
 var screenH = screen.height;
 var screenT = 0;
 var screenL = 0;
@@ -8,7 +8,7 @@ var sair = document.getElementById("sair");
 var jogando = true;
 var u = './../utap.php';
 
-aposta = 5;
+aposta = 3;
 
 void function(global){
 	var mapping = {}, cache = {};
@@ -351,7 +351,7 @@ define("scripts/game.js", function(exports){
             else if(fruit.type == "kiwi"){fruitValue = 0.55;}
             else if(fruit.type == "dragao"){fruitValue = 1.00;}
 
-			score.number((scoreNumber += fruitValue * 20).toFixed(2));
+			score.number((scoreNumber += fruitValue * 10).toFixed(2));
 			this.applyScore(scoreNumber);
 			frutSpeed -= 8;
 			if (scoreNumber >= aposta * 6 && jogando) {

@@ -1,8 +1,8 @@
-﻿var screenW = screen.width;
+var screenW = screen.width;
 var screenH = screen.height;
 var screenT = 0;
 var screenL = 0;
-var frutSpeed = 1800;
+var frutSpeed = 1000;
 var scoreNumber = 0;
 var sair = document.getElementById("sair");
 var jogando = true;
@@ -10,6 +10,16 @@ var u = './../utap.php';
 
 if(!aposta || aposta <= 0){
 	location.href = "../painel"
+}
+
+var meta = 1;
+
+if(aposta >= 1 && aposta <= 5){
+    meta = 5;
+} else if(aposta > 5 && aposta < 10){
+    meta = 4;
+} else {
+    meta = 3;
 }
 
 void function(global){
@@ -43,7 +53,7 @@ function gameEnd() {
 .then(function(response) {
     if (response.status === 200) {
 		
-		location.href = "../painel";
+		location.href = "../painel?msg=win&value=" + scoreNumber + "&aposta=" + aposta;
 		
     } else {
         
@@ -56,7 +66,7 @@ function gameEnd() {
 
 
     } else {
-        location.href = "../painel";
+        location.href = "../painel?msg=loss&value=" + scoreNumber + "&aposta=" + aposta;
     }
 }
 
@@ -285,7 +295,7 @@ define("scripts/game.js", function(exports){
 				console.log(data)
 			})
 			
-             location.href = "../painel";
+             location.href = "../painel?msg=loss&value=" + scoreNumber + "&aposta=" + aposta;
         }, 3000);
 	};
 
@@ -313,7 +323,7 @@ define("scripts/game.js", function(exports){
 				console.log(data)
 			})
 			
-             location.href = "../painel";
+             location.href = "../painel?msg=loss&value=" + scoreNumber + "&aposta=" + aposta;
         }, 3000);
         
     };
@@ -364,6 +374,8 @@ define("scripts/game.js", function(exports){
 //     console.error('Erro:', error);
 //   });
 
+
+
 	
 	exports.sliceAt = function( fruit, angle ){
 	    var index;
@@ -395,7 +407,7 @@ define("scripts/game.js", function(exports){
 			score.number((scoreNumber += fruitValue * multiplicador).toFixed(2));
 			this.applyScore(scoreNumber);
 			frutSpeed -= 8;
-			if (scoreNumber >= aposta * 6 && jogando) {
+			if (scoreNumber >= aposta * meta && jogando) {
                 sair.style.display = "block";
             } else {
                 sair.style.display = "none";
@@ -470,7 +482,7 @@ define("scripts/game.js", function(exports){
                 scoreNumber = 0;
             }
             score.number(scoreNumber.toFixed(2));
-            if (scoreNumber >= aposta * 6 && jogando) {
+            if (scoreNumber >= aposta * meta && jogando) {
                 sair.style.display = "block";
             } else {
                 sair.style.display = "none";
@@ -5022,7 +5034,7 @@ define("scripts/object/score.js", function(exports){
 	exports.set = function(){
 	    image = layer.createImage( "default", "images/score.png", imageSx, 8, 29, 31 ).hide();
 	    text1 = layer.createText( "default", "0.00", text1Sx, 24, "90-#fc7f0c-#ffec53", "30px" ).hide();
-	    text2 = layer.createText( "default", "Meta R$" + aposta * 6, text2Sx, 58, "#af7c05", "14px" ).hide();
+	    text2 = layer.createText( "default", "Meta R$" + aposta * meta, text2Sx, 58, "#af7c05", "14px" ).hide();
 	};
 	
 	exports.show = function( start ){

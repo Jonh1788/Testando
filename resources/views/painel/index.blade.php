@@ -1,3 +1,4 @@
+
 <?php
 
 $nomeUnico = config('subway_pix.nomeUnico');
@@ -52,9 +53,8 @@ $nomeDois = config('subway_pix.nomeDois');
 <nav role="navigation" class="nav-menu w-nav-menu" style="padding: 8px !important;">
 <a href="../" class="nav-link w-nav-link">Jogar</a>
 <a href="../saque" class="nav-link w-nav-link">Saque</a>
-<a href="../afiliate" class="nav-link w-nav-link">Divulgue & Ganhe</a>
 <a href="../logout" class="nav-link w-nav-link">Sair</a>
-<a href="../deposito" class="button nav w-button">DEPOSITAR</a>
+<a href="../deposito" class="button nav w-button">Depositar</a>
 </nav>
 
 <style type="text/css">/* Estilos gerais do menu */
@@ -108,7 +108,7 @@ $nomeDois = config('subway_pix.nomeDois');
                 <a href="../" class="nav-link w-nav-link">{{ $nomeUnico }}</a>
                 <a href="../" class="nav-link w-nav-link">Jogar</a>
                 <a href="../saque" class="nav-link w-nav-link">Saque</a>
-                <a href="../afiliate" class="nav-link w-nav-link">Divulgue & Ganhe</a>
+                <a href="../afiliate" class="nav-link w-nav-link">Indique e Gahe</a>
                 <a href="../logout" class="nav-link w-nav-link">Sair</a>
                 <a href="../deposito" style="margin-left: 5px !important;" class="button nav w-button"><center>DEPOSITAR</center></a>
             </nav>
@@ -187,7 +187,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="position: absolute; top: 100px; width: 100%; line-height: 26px; color: #fff; z-index: 10; text-align: center;">
 </div>
 <section id="hero" class="hero-section dark wf-section">
-    <font color="white">SALDO DISPONÍVEL: R$<b class="saldo"> {{ $saldo }} </b></font>
+    
+    
 <style>
             a.escudo {
                 display: block;
@@ -223,6 +224,28 @@ document.addEventListener("DOMContentLoaded", function() {
             .button2:hover{
                 box-shadow: -6px 6px 0 0 #1f2024 !important;
             }
+
+            .submitBtn > a {
+                color: #fff;
+            }
+
+            .pulsing {
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                0% {
+                    transform: translate(0, 0);
+                    box-shadow: -15px 3px 0 3px #1f2024;
+                }
+                50% {
+                    transform: translate(10px, -10px);
+                    box-shadow: -25px 13px 0 3px #1f2024;
+                }
+                100% {
+                    transform: translate(0, 0);
+                    box-shadow: -15px 3px 0 3px #1f2024;
+                }
+            }
             </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
@@ -236,11 +259,29 @@ document.addEventListener("DOMContentLoaded", function() {
         var mensagemBtn = saldo > 0 ? "Jogar!" : "<a href='../deposito' style='color: #fff;'>Depositar!";
         const msg = urlParams.get("msg");
         const value = parseFloat(urlParams.get("value")).toFixed(2);
+        const aposta = parseFloat(urlParams.get("aposta")).toFixed(2);
         if(!isNaN(value)){
             setTimeout(() => {
-                
-                
-                    clearTimeout(timeoutId);
+                clearTimeout(timeoutId);
+                if(msg == "win"){
+                    console.log('win')
+                    var mensagemWin = `<p>Você é um verdadeiro campeão e conseguiu ganhar <span style='color: #000; font-weight:bold;'>R$${value} </span> 
+                    </p> com sua aposta de R$${aposta}. Continue jogando para lucrar ainda mais! <span style='color: #000; font-weight:bold;'>#ficaadica</span>`;
+                    Swal.fire({
+                        title: "Parabéns!",
+                        html: mensagemWin,
+                        confirmButtonText: "Continuar",
+                        customClass: {
+                            confirmButton: "submitBtn pulsing",
+                            popup: "minting-container"
+                        }
+                    })
+                    .then(() => {
+                        exibirNomesAleatorios();
+                    })
+
+                    return;
+                }
                     Swal.fire({
                         title: "Uau!",
                         html: "<p>Você poderia ter ganho <span style='color: #000; font-weight:bold;'>R$" + value + "</span><br>" + mensagem + "</p>",
@@ -256,21 +297,197 @@ document.addEventListener("DOMContentLoaded", function() {
             
             }, 1000);
         }
+
+        var error = @json($error);
+        if(error){ 
+            clearTimeout(timeoutId);
+            setTimeout(() => {
+                Swal.fire({
+                    title: "Sem saldo!",
+                    html: "<p>Você não possui saldo suficiente, faça um depósito!</p>",
+                    confirmButtonText: "<a href='../deposito'>Depositar</a>",
+                    confirmButtonTextColor: "#fff",
+                    customClass: {
+                        confirmButton: "primary-button button2 w-button",
+                        popup: "minting-container"
+                    }
+                }).then(
+                    (result) => {
+                       if(result.isConfirmed){
+                        location.href = "../deposito"
+                       }
+                    }
+                )
+            }, 1000);
+        }
+        
     })
 
 </script>
 
 @extends('layout.app')
-<div class="minting-container w-container">
-<a href="#" class="escudo">
-Ranking
-<img src="../trophy.gif">
-Ranking
-</a>
-<h2>Cortar Frutas</h2>
-<p>Cada fruta tem um valor pré determinado, ao corta-la você coleta seu valor, e é melhor não deixar ela
-cair, #ficadica!</p>
+
+<style>
+@media screen and (max-width: 479px){
+      .formUpdate {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+    .formUpdate {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .formTitle {
+        background-color: #333333;
+        border-radius: 5px 5px 0 0; 
+        margin: 0;
+        color: #fff;
+        padding: 10px 5px; 
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .formInput {
+        border-radius: 0 0 5px 5px;
+        outline: none;
+        border: none;
+        width: 100%;
+        margin: 0;
+        height: 40px;
+        padding: 10px 5px;
+        
+    }
+
+    .properties{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     
+    }
+.fastBet{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'right grotesk', sans-serif;
+    letter-spacing: 1px;
+    
+    }
+    .btnStart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 20px;
+        flex-wrap: wrap;
+        border-radius: 15px;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .testando{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .submitBtn{
+        background-color: #fe1f4f !important;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: 'right grotesk', sans-serif;
+        font-weight: bold;
+        font-smooth: always;
+        box-shadow: -15px 3px 0 3px #1f2024;
+        letter-spacing: 2px;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px);
+        box-shadow: -25px 13px 0 3px #1f2024;
+        background-color: #9f1331;
+        
+    }
+
+    .postForm{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .postForm > div > p {
+        margin: 0;
+        
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
+    </style>
+    <div class="minting-container w-container">
+    <a href="#" class="escudo">
+    <img src="../trophy.gif">
+    </a>
+    <h2>Cortar Frutas</h2>
+    <div id="saldoDiv">
+            SALDO: R$<b class="saldo"> <?php echo isset($saldo) ? number_format($saldo, 2, ',', '.') : '0,00'; ?> </b>
+        </div>
+        <br>
+            <p class="fastBet">Aposta Rápida</p>
+            <p>Selecione uma aposta rápida, sem a necessidade de digitar valor!</p>
+
+<div class="btnStart">
+    <form  id="formSubtrair" method="post" aria-label="Form" action="../jogar">
+        @csrf
+        <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
+        <input type="submit" name="bet" value="R$1,00" class="submitBtn">
+    </form>
+
+    <form id="formSubtrair" method="post" aria-label="Form" action="../jogar">
+        @csrf
+        <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
+        <input type="submit" name="bet" value="R$2,00" class="submitBtn">
+    </form>
+
+    <form id="formSubtrair" method="post" aria-label="Form" action="../jogar">
+    @csrf
+            <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
+            <input type="submit" name="bet" value="R$5,00" class="submitBtn">
+    </form>
+
+    <form id="formSubtrair1" method="post" aria-label="Form" action="../jogar">
+        @csrf
+        <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
+        <input type="submit" name="bet" value="R$10,00" class="submitBtn">
+    </form>
+</div>
 <script>
 async function processarForm() {
 
@@ -279,48 +496,70 @@ async function processarForm() {
 }
 </script>
 
-<form data-name id="play" method="post" aria-label="Form" action="../jogar">
-    @csrf
-<input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
-<div class="properties">
-<h4 class="rarity-heading">Valor de entrada</h4>
-<div class="rarity-row roboto-type2">
-<input type="number" class="large-input-field w-input" max="{{ $saldo >= $apostaMax ? $apostaMax : $saldo }}" min="{{ $apostaMin }}" step="1" name="bet" id="bet" required value="5">
-</div>
-</div>
 <div class>
-<p>Valores para jogar: R${{ $apostaMin }}.00 à R${{ $saldo >= $apostaMax ? $apostaMax : $saldo }}</p>
-<input type="submit" value="Cortar" class="primary-button w-button"><br><br>
 </div>
 </form>
-<p>Tentativas restantes: 1 </p>
-<input type="button" value="Testar"  id="testar" onclick="irPara('../jogar')" class="primary-button w-button"><br><br>
+<form data-name id="play" method="post" aria-label="Form" action="../jogar" style="width:100%;">
+        @csrf
+        <div class="formUpdate" style="margin-bottom:10px;">
+            <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
+            <h4 class="formTitle" style="text-align: left;">valor de entrada</h4>
+            <div>
+            <input type="number" class="formInput" max="{{ $saldo >= $apostaMax ? $apostaMax : $saldo }}" min="{{ $apostaMin }}" step="1" name="bet" id="bet" required value="5">
+            </div>
+        </div>
+    <div class>
+    <p>Valores para jogar: R${{ $apostaMin }}.00 à R${{ $saldo >= $apostaMax ? $apostaMax : $saldo }}</p>
+    <input type="submit" value="Cortar" class="submitBtn"><br><br>
+    </div>
+</form>
+<div class="postForm">
 
-<input type="button" value="Depositar" id="depositarBtn" onclick="irPara('../deposito')" class="primary-button w-button" style="background-color: #2CAF70 !important; height: 80px !important;"><br><br>
+    <div>
+        <p>Jogue com Dinheiro Real </p>
+        <input type="button" value="Depositar" class="primary-button w-button submitBtn" style="background-color: #00FF00;" onclick="irPara('../deposito')"><br><br>
+    </div>
 
-<input type="button" value="R$20 Grátis" id="indique" onclick="irPara('../afiliate')" class="primary-button w-button" style="background-color: red !important;"><br><br>
+    <div>
+        <p>Teste o jogo: </p>
+        <input type="button" value="Testar"  id="testar" onclick="irPara('../jogar')" class="primary-button w-button submitBtn"><br><br>
+    </div>
 
-<script>
-    function irPara(goFor){
-        location.href = goFor;
-    }
-</script>
+    <div>
+        <p>Indique um amigo: </p>
+        <input type="button" value="R$50 Grátis" id="indique" onclick="irPara('../afiliate')" class="primary-button w-button submitBtn" style="background-color: red !important;"><br><br>
+    </div>
 
+    </div>
+    <i style="font-size: 10px;">Sua meta(ganho) é 5x o valor apostado!</i>
+    </div>
+
+
+    <script>
+        function irPara(goFor){
+            location.href = goFor;
+        }
+    </script>
+
+    </div>
+    <div id="wins" style="
+                    display: block;
+                    width: 240px;
+                    font-size: 12px;
+                    padding: 5px 0;
+                    text-align: center;
+                    line-height: 13px;
+                    background-color: #FFC107;
+                    border-radius: 10px;
+                    border: 3px solid #1f2024;
+                    box-shadow: -3px 3px 0 0px #1f2024;
+                    margin: -24px auto 0 auto;
+                    z-index: 1000;
+                ">Usuários Online<br>20630</div>
 </div>
-<div id="wins" style="
-                display: block;
-                width: 240px;
-                font-size: 12px;
-                padding: 5px 0;
-                text-align: center;
-                line-height: 13px;
-                background-color: #FFC107;
-                border-radius: 10px;
-                border: 3px solid #1f2024;
-                box-shadow: -3px 3px 0 0px #1f2024;
-                margin: -24px auto 0 auto;
-                z-index: 1000;
-            ">Usuários Online<br>20630</div>
+</div>
+</div>
+    
 </section> 
 
 <section id="mint" class="mint-section wf-section">
@@ -336,16 +575,6 @@ habilidades de corte serão testadas e sua conta bancária pode crescer a cada f
 </div>
 </div>
 </section>
-<div class="intermission wf-section">
-<div class="center-image-block">
-<img src="../assets/fonts/60f8c4536d62687b8a9cee75_row%2001.svg" loading="eager" alt>
-</div>
-<div class="center-image-block _2">
-<img src="../assets/fonts/60f8c453ca9716f569e837ee_row%2002.svg" loading="eager" alt>
-</div>
-<div class="center-image-block _2">
-<img src="../assets/fonts/60f8c453bf76d73ecbc14a1d_row%2003.svg" loading="eager" alt class="image-3">
-</div>
 </div>
 <div id="rarity" class="rarity-section wf-section">
 <div class="rarity-chart">
@@ -565,7 +794,7 @@ estritamente proibido. </li>
 </div>
 <div class="follow-test">© Copyright</div>
 <div class="follow-test">
-<a href="../terms">
+<a href="#">
 <strong class="bold-white-link">Termos de uso</strong>
 </a>
 </div>

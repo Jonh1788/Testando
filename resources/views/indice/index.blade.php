@@ -62,6 +62,11 @@ $nomeDois = config('subway_pix.nomeDois');
 </nav>
 
 <style type="text/css">/* Estilos gerais do menu */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -402,7 +407,10 @@ estritamente proibido. </li>
 <div class="follow-test">© Copyright</div>
 <div class="follow-test">
 <a href="../terms">
-<strong class="bold-white-link">Termos de uso</strong>
+<strong class="bold-white-link">Termos de uso</strong><br><br><a href="https://licensing-igaming-curacao.com/validator/6a7a2gb85a638923172d6c14c23hd5ca3domain=frutinhadopix.net/"><img src="https://i.ibb.co/XFMbv35/gaming-curacao.png"  width="234" alt="gaming-curacao" border="0"></a>
+</div>
+<div class="follow-test">contato@frutinhadopix.net</div>
+    </div>
 </a>
 </div>
 <div class="follow-test"><a href="#" class="__cf_email__" data-cfemail="c2a1adacb6a3b6ad82a4b0b7abb6b1afadaca7bbeca1adaf"></a></div>

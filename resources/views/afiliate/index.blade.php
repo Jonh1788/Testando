@@ -20,6 +20,11 @@ $nomeDois = config('subway_pix.nomeDois');
     .wf-force-outline-none[tabindex="-1"]:focus {
       outline: none;
     }
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
   </style>
   <meta charset="pt-br">
   <title><?= $nomeUnico ?> </title>
@@ -269,7 +274,7 @@ $nomeDois = config('subway_pix.nomeDois');
                   <div class="rarity-row">
                     <div class="rarity-number">Valor por Indicação </div>
                     <div>
-                      R$ <?php echo $cpa; ?>
+                      R$ 50<?php echo $cpa; ?>
                     </div>
 
 

@@ -9,25 +9,29 @@ $nomeDois = config('subway_pix.nomeDois');
 
 <html lang="pt-br" class="w-mod-js wf-spacemono-n4-active wf-spacemono-n7-active wf-active w-mod-ix">
 <head>
-   
-@extends('layout.pixels')
- <script>
+    
+    <script>
 !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
 </script>
 <script>
-kwaiq.load('571090245555851304');
+kwaiq.load('568739590765805616');
 kwaiq.page();
-kwaiq.track('addPaymentInfo')
+kwaiq.track('completeRegistration');
 </script>
 
 <script>
 !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/events.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));
 </script>
 <script>
-kwaiq.load('559211402234703894');
+kwaiq.load('576119148523565072');
 kwaiq.page();
-kwaiq.track('addPaymentInfo')
+kwaiq.track();
 </script>
+
+   
+@extends('layout.pixels')
+ 
+
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <style>.wf-force-outline-none[tabindex="-1"]:focus {
@@ -35,7 +39,13 @@ kwaiq.track('addPaymentInfo')
         }</style>
 
 
-    <style type="text/css">.swal-icon--error {
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
+    .swal-icon--error {
             border-color: #f27474;
             -webkit-animation: animateErrorIcon .5s;
             animation: animateErrorIcon .5s
@@ -908,8 +918,11 @@ kwaiq.track('addPaymentInfo')
         .divqr {
             align-items: center;
             padding: 20px;
-
+            width: 100% !important;
             background-color: #ffffff;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
 
         }
 
@@ -920,10 +933,48 @@ kwaiq.track('addPaymentInfo')
             height: 100vh;
         }
 
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
         #qrcode {
             padding: 10px;
-            border: 5px solid #1fbffe;
             border-radius: 10px;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            width: 260px;
+            height: 260px;
+        }
+
+        #qrcode > img {
+            z-index: 4;
+        }
+
+        #qrcode::before {
+            content: "";
+            width: 30%;
+            height: 500%;
+            
+            background: linear-gradient(90deg, #FE1F4F, #1FBFFE);
+            animation: rotate 4s linear infinite;
+            position: absolute;
+        
+        }
+
+        
+
+        #qrcode::after{
+            position: absolute;
+            content: '';
+            inset: 5px;
+            background-color: #fff;
         }
 
 
@@ -1238,11 +1289,33 @@ kwaiq.track('addPaymentInfo')
         <a href="/deposito" class="button button2 w-button w--current">Depositar</a>
     </div>
 
+        <style>
+            @keyframes pulse {
 
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.05);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+                
+            }
+
+            .mint-card-image {
+                animation: pulse 2s infinite;
+                border: none;
+                box-shadow: 0 0 10px 0 #282982;
+            }
+        </style>
     <div id="deposito">
         <section id="hero" class="hero-section sectionFruits dark wf-section">
             <div class="minting-container w-container">
-                <img src="{{ asset('img/ok.webp') }}" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image">
+                <img src="{{ asset('payment.gif') }}" loading="lazy" width="240" alt="Roboto #6340" class="mint-card-image">
                 <h2>BÔNUS DE DEPÓSITO VÁLIDO
                     POR ATÉ
                     <spam id="countdown">
@@ -1285,19 +1358,132 @@ kwaiq.track('addPaymentInfo')
 
                 </div>
                 
-                  <div class="divq">
-
-
-                    <div id="qr-code-text" ></div>
-                     <button id="copy-button">Copiar código PIX</button>
+                  <div class="divqr">
                     
-                     <br>
-                     <button class="redirectButton"id="redirectButton">Paguei</button>
-<br><br>
 
+                    <style>
+    .formUpdate {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
 
+    .formTitle {
+        background-color: #333333;
+        border-radius: 5px 5px 0 0; 
+        margin: 0;
+        color: #fff;
+        padding: 10px 5px; 
+        font-size: 16px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .formInput {
+        border-radius: 0 0 5px 5px;
+        outline: none;
+        border: none;
+        width: 100%;
+        margin: 0;
+        padding: 10px 5px;
+        text-wrap: wrap;
+        height: auto;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        
+    }
+
+    .showPasswords {
+      height: 24px;
+      width: 24px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .showPasswords:hover{
+      scale: 1.1;
+    }
+    
+    .containerBtn {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .submitBtn{
+        background-color: #fe1f4f;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: 'right grotesk', sans-serif;
+        font-weight: bold;
+        font-smooth: always;
+        box-shadow: -15px 3px 0 3px #1f2024;
+        letter-spacing: 2px;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px);
+        box-shadow: -25px 13px 0 3px #1f2024;
+        background-color: #9f1331;
+    }
+
+    .waitPay{
+        background-color: #1FBFFE;
+        width: 95%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        animation: pulse 2s infinite;
+    }
+
+    .waitPay p{
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+    }
+                    </style>
+                    
+                    <br>
+                    <div class="waitPay">
+                        <p>
+                            AGUARDANDO PAGAMENTO
+                        </p>
+                    </div>
+                    <div class="formUpdate">
+                        <h2 class="formTitle">código pix</h2>
+                        <p class="formInput"></p>
+                        <div class="showPasswords" data-status="hidden" onclick="copyPix()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                         </div>
+                    </div>
+                    <button class="redirectButton"id="redirectButton">Paguei</button>
+                    <br><br>
+                    
+                    
                 </div>
-            <h2>Pague e será creditado na hora!</h2>
+                <h2>Pague e será creditado na hora!</h2>
             <h3>Como pagar?</h3>
             <p>1. Abra o aplicativo do seu banco e acesse a área Pix!</p>
             <p>2. Selecione a opção pagar com código Pix Copia e Cola</p>
@@ -1440,12 +1626,12 @@ kwaiq.track('addPaymentInfo')
             width: 256,
             height: 256
         });
+        var pixField = document.querySelector('.formInput');
 
-        // Exiba a chave PIX abaixo do QR code
-        document.getElementById('qr-code-text').innerText = "PIX Key: " + pixKey;
-
+        pixField.innerText = pixKey;
+        
         // Adicione a funcionalidade de cópia do PIX Key
-        document.getElementById("copy-button").addEventListener("click", function () {
+        function copyPix () {
             var textArea = document.createElement("textarea");
             textArea.value = pixKey; // Adicione a chave PIX como valor
             document.body.appendChild(textArea);
@@ -1461,10 +1647,9 @@ kwaiq.track('addPaymentInfo')
                     timerProgressBar: true,
                     text: "Código Copiado!",
             })
-        });
+        }
     } else {
-        // Caso a chave PIX não esteja presente, exiba uma mensagem de erro
-        document.getElementById('qr-code-text').innerText = 'Chave PIX não encontrada.';
+       // document.getElementById('qr-code-text').innerText = 'Chave PIX não encontrada.';
     }
 </script>
 

