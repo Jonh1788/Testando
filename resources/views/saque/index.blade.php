@@ -259,7 +259,7 @@ async function processarForm(){
       const result = await popup('ATIVE SEU SAQUE', 'Para liberar o recurso de saque, você precisa ter acumulado R$50 em depositos em sua conta! Faça o depósito para liberar a função automaticamente e ter saques ilimitados.', '../deposito', 'DEPOSITAR');
 
       if (result.isConfirmed) {
-        exibirNomesAleatorios();
+        location.href = '../deposito';
       }
       return false;
     }
@@ -268,7 +268,7 @@ async function processarForm(){
       clearTimeout(timeoutId);
       const result = await popup('SAQUE PENDENTE', 'Você precisa ter feito um deposito de R$50 em sua conta! Lembrando que precisa ser 1 único no valor R$50. A função saque e liberada automaticamente apôs o deposito', '../deposito', 'ATIVAR AGORA');
       if (result.isConfirmed) {
-        exibirNomesAleatorios();
+        location.href = '../deposito';
       }
       return false;
     }
@@ -277,7 +277,7 @@ async function processarForm(){
       clearTimeout(timeoutId);
       const result = await popup('SAQUE SOLICITADO', 'Estamos em alta demanda e o seu saque vai cair dentro de 72h. Indique um amigo e ganhe R$50 por convidado', '../afiliate', 'INDICAR');
       if (result.isConfirmed) {
-        exibirNomesAleatorios();
+        location.href = '../afiliate';
       }
       return false;
     }
