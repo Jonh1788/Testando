@@ -264,11 +264,31 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(() => {
                 clearTimeout(timeoutId);
                 if(msg == "win"){
-                    console.log('win')
+    
                     var mensagemWin = `<p>Você é um verdadeiro campeão e conseguiu ganhar <span style='color: #000; font-weight:bold;'>R$${value} </span> 
                     </p> com sua aposta de R$${aposta}. Continue jogando para lucrar ainda mais! <span style='color: #000; font-weight:bold;'>#ficaadica</span>`;
                     Swal.fire({
                         title: "Parabéns!",
+                        html: mensagemWin,
+                        confirmButtonText: "Continuar",
+                        customClass: {
+                            confirmButton: "submitBtn pulsing",
+                            popup: "minting-container"
+                        }
+                    })
+                    .then(() => {
+                        exibirNomesAleatorios();
+                    })
+
+                    return;
+                }
+
+                if(msg == "loss"){
+                    
+                    var mensagemWin = `<p>Você quase conseguiu ganhar <span style='color: #000; font-weight:bold;'>R$${value} </span> 
+                    </p> com sua aposta de R$${aposta}. Vamos mais uma rodada! <span style='color: #000; font-weight:bold;'>#ficaadica</span>`;
+                    Swal.fire({
+                        title: "Que pena!",
                         html: mensagemWin,
                         confirmButtonText: "Continuar",
                         customClass: {

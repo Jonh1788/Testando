@@ -21,7 +21,15 @@ $nomeDois = config('subway_pix.nomeDois');
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="images/index.css">
-    
+    <style>
+        #sair{
+            border: 1px solid #fff !important;
+            background-color: #039103 !important;
+            color: #fff !important;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5) !important;
+           
+        }
+    </style>
     <title>{{$nomeUnico}}</title>
 </head>
 <body>
@@ -31,7 +39,7 @@ $nomeDois = config('subway_pix.nomeDois');
         <div id="browser"></div>
     </div>
     <div id="sair" onclick="gameEnd()" style="z-index: 9999; cursor: pointer;">
-        ENCERRAR APOSTA
+        RETIRAR LUCRO
     </div>
     
         

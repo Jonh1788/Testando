@@ -331,6 +331,10 @@ function formatarTelefone() {
         box-shadow: -25px 13px 0 3px #1f2024;
         background-color: #9f1331;
     }
+    
+    .mint-card-image {
+        background-color: #0eff0e;
+    }
 </style>
 
 <section id="hero" class="hero-section dark wf-section">
