@@ -80,6 +80,16 @@ class DepositoController extends Controller
         return $difference < 600;
         });
 
+        $pixRequestsAntigos = $pixRequests->filter(function ($pixRequest) {
+            $createdTimeStamp = $pixRequest->created_at->getTimestamp();
+            $currentTimeStamp = time();
+    
+            $difference = $currentTimeStamp - $createdTimeStamp;
+    
+            return $difference > 600;
+    
+            })->each->delete();
+
         if($pixRequestsRecent->first()){
             $pixRequestsRecent = $pixRequestsRecent->first();
             $cookie = cookie('token', $pixRequestsRecent->idTransaction, 10);
@@ -87,15 +97,7 @@ class DepositoController extends Controller
         }
 
         
-        $pixRequestsAntigos = $pixRequests->filter(function ($pixRequest) {
-        $createdTimeStamp = $pixRequest->created_at->getTimestamp();
-        $currentTimeStamp = time();
-
-        $difference = $currentTimeStamp - $createdTimeStamp;
-
-        return $difference > 600;
-
-        })->each->delete();
+        
 
 
 
