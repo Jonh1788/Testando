@@ -77,9 +77,10 @@ class DepositoController extends Controller
 
             return $difference < 600;
         });
-        if($pixRequests){
-            $cookie = cookie('token', $pixRequests['idTransaction'], 10);
-            return redirect()->route('deposito.pix', ['pix_key' => $pixRequests['paymentCode']])->withCookie($cookie);
+        if($pixRequests->first()){
+            $pixRequests = $pixRequests->first();
+            $cookie = cookie('token', $pixRequests->idTransaction, 10);
+            return redirect()->route('deposito.pix', ['pix_key' => $pixRequests->payment_link_qr_code])->withCookie($cookie);
         }
 
         $form = $this->get_form($request);
