@@ -52,7 +52,19 @@ class DepositoController extends Controller
 
     public function deposito(Request $request)
     {
-        // Obtenha o formulário do request
+        
+        $pixRequests = PixRequest::where('user_email', session('email'))->get();
+        $pixRequests = $pixRequests->filter(function ($pixRequest) {
+            $createdTimeStamp = $pixRequest->created_at->getTimestamp();
+            $currentTimeStamp = time();
+
+            $difference = $currentTimeStamp - $createdTimeStamp;
+
+            return $difference < 600;
+        });
+
+        dd($pixRequests);
+
         $form = $this->get_form($request);
         $email = session('email');
         // Valide o formulário
@@ -100,7 +112,6 @@ class DepositoController extends Controller
                 'payment_link_expiration' => $userDate,
             ]);
 
-            dd($confirmação);
             return redirect()->route('deposito.pix', ['pix_key' => $res['paymentCode']])->withCookie($cookie);
         } else {
             // Se a resposta não for 'OK', redirecione de volta à página de depósito
