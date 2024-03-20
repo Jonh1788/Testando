@@ -91,12 +91,13 @@ class DepositoController extends Controller
             }
 
 
-
+            $userDate = date('Y-m-d H:i:s', strtotime($userDate . '+10 minutes'));
+            
             $confirmação = PixRequest::create([
                 'user_email' => $email,
                 'amount' => $form['value'],
                 'payment_link_qr_code' => $res['paymentCode'],
-                'payment_link_expiration' => $res['dueDate'],
+                'payment_link_expiration' => $userDate,
             ]);
 
             dd($confirmação);
