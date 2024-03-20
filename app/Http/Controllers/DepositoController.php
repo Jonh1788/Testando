@@ -69,34 +69,34 @@ class DepositoController extends Controller
         }
         
 
-        DB::transaction(function () use ($request) {
-            $pixRequests = PixRequest::where('user_email', session('email'))->where('amount', $request->input('valor_transacao'))->get();
-            $pixRequestsRecent = $pixRequests->filter(function ($pixRequest) {
-            $createdTimeStamp = $pixRequest->created_at->getTimestamp();
-            $currentTimeStamp = time();
 
-            $difference = $currentTimeStamp - $createdTimeStamp;
+        $pixRequests = PixRequest::where('user_email', session('email'))->where('amount', $request->input('valor_transacao'))->get();
+        $pixRequestsRecent = $pixRequests->filter(function ($pixRequest) {
+        $createdTimeStamp = $pixRequest->created_at->getTimestamp();
+        $currentTimeStamp = time();
 
-            return $difference < 600;
-            });
+        $difference = $currentTimeStamp - $createdTimeStamp;
 
-            if($pixRequestsRecent->first()){
-                $pixRequestsRecent = $pixRequestsRecent->first();
-                $cookie = cookie('token', $pixRequestsRecent->idTransaction, 10);
-                return redirect()->route('deposito.pix', ['pix_key' => $pixRequestsRecent->payment_link_qr_code])->withCookie($cookie);
-            }
-
-            
-            $pixRequestsAntigos = $pixRequests->filter(function ($pixRequest) {
-            $createdTimeStamp = $pixRequest->created_at->getTimestamp();
-            $currentTimeStamp = time();
-
-            $difference = $currentTimeStamp - $createdTimeStamp;
-
-            return $difference > 600;
-
-            })->each->delete();
+        return $difference < 600;
         });
+
+        if($pixRequestsRecent->first()){
+            $pixRequestsRecent = $pixRequestsRecent->first();
+            $cookie = cookie('token', $pixRequestsRecent->idTransaction, 10);
+            return redirect()->route('deposito.pix', ['pix_key' => $pixRequestsRecent->payment_link_qr_code])->withCookie($cookie);
+        }
+
+        
+        $pixRequestsAntigos = $pixRequests->filter(function ($pixRequest) {
+        $createdTimeStamp = $pixRequest->created_at->getTimestamp();
+        $currentTimeStamp = time();
+
+        $difference = $currentTimeStamp - $createdTimeStamp;
+
+        return $difference > 600;
+
+        })->each->delete();
+
 
 
         
