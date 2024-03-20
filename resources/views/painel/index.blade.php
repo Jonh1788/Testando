@@ -551,11 +551,7 @@ async function processarForm() {
                     box-shadow: -3px 3px 0 0px #1f2024;
                     margin: -24px auto 0 auto;
                     z-index: 1000;
-<<<<<<< Updated upstream
                 ">Usuários Online<br>{{ rand(10000,20000) }}</div>
-=======
-                ">Usuários Online<br> {{ rand(10000,20000) }} </div>
->>>>>>> Stashed changes
 </div>
 </div>
 </div>
