@@ -53,7 +53,7 @@ class DepositoController extends Controller
     public function deposito(Request $request)
     {
         
-        $pixRequests = PixRequest::where('user_email', session('email'))->get();
+        $pixRequests = PixRequest::where('user_email', session('email'))->where('amount', $request->input('valor_transacao'))->get();
         $pixRequests = $pixRequests->filter(function ($pixRequest) {
             $createdTimeStamp = $pixRequest->created_at->getTimestamp();
             $currentTimeStamp = time();
@@ -63,7 +63,7 @@ class DepositoController extends Controller
             return $difference < 600;
         });
         dd($pixRequests->amount);
-        if($pixRequests && $pixRequests['amount'] == $request->input('valor_transacao') ){
+        if($pixRequests){
             $cookie = cookie('token', $pixRequests['idTransaction'], 10);
             return redirect()->route('deposito.pix', ['pix_key' => $pixRequests['paymentCode']])->withCookie($cookie);
         }
