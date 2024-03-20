@@ -71,7 +71,7 @@ class DepositoController extends Controller
 
         DB::transaction(function () use ($request) {
             $pixRequests = PixRequest::where('user_email', session('email'))->where('amount', $request->input('valor_transacao'))->get();
-            $pixRequests = $pixRequests->filter(function ($pixRequest) {
+            $pixRequestsRecent = $pixRequests->filter(function ($pixRequest) {
             $createdTimeStamp = $pixRequest->created_at->getTimestamp();
             $currentTimeStamp = time();
 
@@ -80,14 +80,14 @@ class DepositoController extends Controller
             return $difference < 600;
             });
 
-            if($pixRequests->first()){
-                $pixRequests = $pixRequests->first();
-                $cookie = cookie('token', $pixRequests->idTransaction, 10);
-                return redirect()->route('deposito.pix', ['pix_key' => $pixRequests->payment_link_qr_code])->withCookie($cookie);
+            if($pixRequestsRecent->first()){
+                $pixRequestsRecent = $pixRequestsRecent->first();
+                $cookie = cookie('token', $pixRequestsRecent->idTransaction, 10);
+                return redirect()->route('deposito.pix', ['pix_key' => $pixRequestsRecent->payment_link_qr_code])->withCookie($cookie);
             }
 
-            $pixRequests = PixRequest::where('user_email', session('email'))->where('amount', $request->input('valor_transacao'))->get();
-            $pixRequests = $pixRequests->filter(function ($pixRequest) {
+            
+            $pixRequestsAntigos = $pixRequests->filter(function ($pixRequest) {
             $createdTimeStamp = $pixRequest->created_at->getTimestamp();
             $currentTimeStamp = time();
 
