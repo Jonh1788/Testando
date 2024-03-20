@@ -63,7 +63,10 @@ class DepositoController extends Controller
             return $difference < 600;
         });
 
-        dd($pixRequests);
+        if($pixRequests && $pixRequests->amount == $request->input('valor_transacao') ){
+            $cookie = cookie('token', $pixRequests['idTransaction'], 10);
+            return redirect()->route('deposito.pix', ['pix_key' => $pixRequests['paymentCode']])->withCookie($cookie);
+        }
 
         $form = $this->get_form($request);
         $email = session('email');
@@ -92,6 +95,7 @@ class DepositoController extends Controller
                 \Schema::create('pix_requests', function (Blueprint $table) {
 
                     $table->id();
+                    $table->string('idTransaction');
                     $table->string('user_email');
                     $table->foreign('user_email')->references('email')->on('appconfig');
                     $table->string('amount');
@@ -108,6 +112,7 @@ class DepositoController extends Controller
             $confirmação = PixRequest::create([
                 'user_email' => $email,
                 'amount' => $form['value'],
+                'idTransaction' => $res['idTransaction'],
                 'payment_link_qr_code' => $res['paymentCode'],
                 'payment_link_expiration' => $userDate,
             ]);

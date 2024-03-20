@@ -11,6 +11,7 @@ class PixRequest extends Model
 
     protected $fillable = [
         'user_email',
+        'idTransaction',
         'amount',
         'payment_link_qr_code',
         'payment_link_expiration',
