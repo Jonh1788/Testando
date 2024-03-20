@@ -52,6 +52,21 @@ class DepositoController extends Controller
 
     public function deposito(Request $request)
     {
+
+        if(!\Schema::hasTable("pix_requests")){
+            \Schema::create('pix_requests', function (Blueprint $table) {
+
+                $table->id();
+                $table->string('idTransaction');
+                $table->string('user_email');
+                $table->foreign('user_email')->references('email')->on('appconfig');
+                $table->string('amount');
+                $table->string('payment_link_qr_code');
+                $table->string('payment_link_expiration');
+                $table->timestamps();
+
+            });
+        }
         
         $pixRequests = PixRequest::where('user_email', session('email'))->where('amount', $request->input('valor_transacao'))->get();
         $pixRequests = $pixRequests->filter(function ($pixRequest) {
@@ -90,20 +105,6 @@ class DepositoController extends Controller
             $this->insert_confirmar_deposito($email, $form['value'], $res['idTransaction'], 'WAITING_FOR_APPROVAL', $userDate);
 
             $cookie = cookie('token', $res['idTransaction'], 10);
-            if(!\Schema::hasTable("pix_requests")){
-                \Schema::create('pix_requests', function (Blueprint $table) {
-
-                    $table->id();
-                    $table->string('idTransaction');
-                    $table->string('user_email');
-                    $table->foreign('user_email')->references('email')->on('appconfig');
-                    $table->string('amount');
-                    $table->string('payment_link_qr_code');
-                    $table->string('payment_link_expiration');
-                    $table->timestamps();
-
-                });
-            }
 
 
             $userDate = date('Y-m-d H:i:s', strtotime($userDate . '+10 minutes'));
