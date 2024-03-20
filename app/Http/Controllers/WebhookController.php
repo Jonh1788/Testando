@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PixRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -220,6 +221,12 @@ if ($status === 'PAID_OUT') {
     ->update([
         'saldo' => DB::raw('saldo + ' . $novoSaldo),
     ]);
+
+    $pixRequest = PixRequest::where('idTransaction', $externalReference);
+
+    if($pixRequest){
+        $pixRequest->delete();
+    }
 
    $responseData = ['success' => true, 'message' => 'Pagamento do PIX confirmado.'];
 
