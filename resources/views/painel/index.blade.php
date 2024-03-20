@@ -480,8 +480,8 @@ document.addEventListener("DOMContentLoaded", function() {
             SALDO: R$<b class="saldo"> <?php echo isset($saldo) ? number_format($saldo, 2, ',', '.') : '0,00'; ?> </b>
         </div>
         <br>
-            <p class="fastBet">Aposta Rápida</p>
-            <p>Selecione uma aposta rápida, sem a necessidade de digitar valor!</p>
+            <p class="fastBet">Escolha a aposta:</p>
+            <p>Selecione um valor para apostar!</p>
 
 <div class="btnStart">
     <form  id="formSubtrair" method="post" aria-label="Form" action="../jogar">
@@ -491,22 +491,11 @@ document.addEventListener("DOMContentLoaded", function() {
     </form>
 
     <form id="formSubtrair" method="post" aria-label="Form" action="../jogar">
-        @csrf
-        <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
-        <input type="submit" name="bet" value="R$2,00" class="submitBtn">
-    </form>
-
-    <form id="formSubtrair" method="post" aria-label="Form" action="../jogar">
     @csrf
             <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
             <input type="submit" name="bet" value="R$5,00" class="submitBtn">
     </form>
 
-    <form id="formSubtrair1" method="post" aria-label="Form" action="../jogar">
-        @csrf
-        <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
-        <input type="submit" name="bet" value="R$10,00" class="submitBtn">
-    </form>
 </div>
 <script>
 async function processarForm() {
@@ -519,20 +508,7 @@ async function processarForm() {
 <div class>
 </div>
 </form>
-<form data-name id="play" method="post" aria-label="Form" action="../jogar" style="width:100%;">
-        @csrf
-        <div class="formUpdate" style="margin-bottom:10px;">
-            <input type="hidden" name="_token" value="vmYl7uSIUvRRBXLjvgIcTJVTyqm0bBfegpnjAmNU">
-            <h4 class="formTitle" style="text-align: left;">valor de entrada</h4>
-            <div>
-            <input type="number" class="formInput" max="{{ $saldo >= $apostaMax ? $apostaMax : $saldo }}" min="{{ $apostaMin }}" step="1" name="bet" id="bet" required value="5">
-            </div>
-        </div>
-    <div class>
-    <p>Valores para jogar: R${{ $apostaMin }}.00 à R${{ $saldo >= $apostaMax ? $apostaMax : $saldo }}</p>
-    <input type="submit" value="Cortar" class="submitBtn"><br><br>
-    </div>
-</form>
+
 <div class="postForm">
 
     <div>
@@ -575,7 +551,11 @@ async function processarForm() {
                     box-shadow: -3px 3px 0 0px #1f2024;
                     margin: -24px auto 0 auto;
                     z-index: 1000;
+<<<<<<< Updated upstream
                 ">Usuários Online<br>{{ rand(10000,20000) }}</div>
+=======
+                ">Usuários Online<br> {{ rand(10000,20000) }} </div>
+>>>>>>> Stashed changes
 </div>
 </div>
 </div>

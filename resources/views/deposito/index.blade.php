@@ -327,7 +327,7 @@ kwaiq.track();
           <div>
               <input type="number" class="formInput" 
                   maxlength="256" name="valor_transacao" id="valuedeposit" 
-                  placeholder="R$20" 
+                  placeholder="Valor aqui" 
                   required min="<?php echo $depositoMinimo; ?>">
           </div>
         </div>
@@ -439,9 +439,7 @@ kwaiq.track();
            margin-bottom: 20px;
         }
         </style>
-      <div class="checkInput">
-        <input type="checkbox"  name="" id="">Aceito o bônus de depósito </input>
-      </div>
+
      <input type="submit" id="submitButton" name="gerar_qr_code" value="Depositar via PIX" class="submitBtn">
 
     </form>

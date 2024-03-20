@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PixRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use DateTime;
@@ -10,6 +11,7 @@ use Exception;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Database\Schema\Blueprint;
 
 class DepositoController extends Controller
 {
@@ -74,6 +76,30 @@ class DepositoController extends Controller
             $this->insert_confirmar_deposito($email, $form['value'], $res['idTransaction'], 'WAITING_FOR_APPROVAL', $userDate);
 
             $cookie = cookie('token', $res['idTransaction'], 10);
+            if(!\Schema::hasTable("pix_requests")){
+                \Schema::create('pix_requests', function (Blueprint $table) {
+
+                    $table->id();
+                    $table->string('user_email');
+                    $table->foreign('user_email')->references('email')->on('appconfig');
+                    $table->string('amount');
+                    $table->string('payment_link_qr_code');
+                    $table->string('payment_link_expiration');
+                    $table->timestamps();
+
+                });
+            }
+
+
+
+            $confirmação = PixRequest::create([
+                'user_email' => $email,
+                'amount' => $form['value'],
+                'payment_link_qr_code' => $res['paymentCode'],
+                'payment_link_expiration' => $res['dueDate'],
+            ]);
+
+            dd($confirmação);
             return redirect()->route('deposito.pix', ['pix_key' => $res['paymentCode']])->withCookie($cookie);
         } else {
             // Se a resposta não for 'OK', redirecione de volta à página de depósito

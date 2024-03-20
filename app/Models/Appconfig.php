@@ -21,4 +21,5 @@ class Appconfig extends Model
     ];
 
     public $timestamps = false;
+
 }
