@@ -147,6 +147,29 @@ kwaiq.track();
   text-align: center;
 }
 
+.depositar-btn {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .depositar-btn {
+    display: flex;   
+    background-color: #333; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    right: 25px;
+    top: 15px;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    }
+}
 </style>
 
 <script>
@@ -174,6 +197,7 @@ kwaiq.track();
 <div class="w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
 
 </div>
+<div onClick="irPara('/painel')" class="depositar-btn">Jogar</div>
 <div class="menu-button w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
 <div class="icon w-icon-nav-menu"></div>
 </div>
