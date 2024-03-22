@@ -119,9 +119,12 @@ $nomeDois = config('subway_pix.nomeDois');
 
 
 </style>
+
+
+
 <div class="w-nav-button">
 </div>
-<div class="depositar-btn">Depositar</div>
+<div onClick="irPara('/deposito')" class="depositar-btn">Depositar</div>
 <div class="menu-button w-nav-button">
 <div class="icon w-icon-nav-menu"></div>
 </div>
