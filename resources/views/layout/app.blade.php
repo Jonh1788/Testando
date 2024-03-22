@@ -140,7 +140,8 @@
   "Enzo L.",
   "Yasmin C.",
   "Lucas S.",
-  "Isabela C.", ];
+  "Isabela C.",
+  "Aline L." ];
 
         // Função para exibir nomes aleatórios com tempo aleatório
         function exibirNomesAleatorios() {

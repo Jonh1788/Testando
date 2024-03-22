@@ -92,9 +92,36 @@ $nomeDois = config('subway_pix.nomeDois');
     padding: 10px 20px;
     text-decoration: none;
 }
+
+.depositar-btn {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .depositar-btn {
+    display: flex;   
+    background-color: #333; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    right: 25px;
+    top: 15px;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    }
+}
+
+
 </style>
 <div class="w-nav-button">
 </div>
+<div class="depositar-btn">Depositar</div>
 <div class="menu-button w-nav-button">
 <div class="icon w-icon-nav-menu"></div>
 </div>
