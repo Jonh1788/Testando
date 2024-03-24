@@ -30,7 +30,9 @@ class LoginController extends Controller
             ->where('senha', $senha)
             ->first();
         
-        $errorMessage = 'Credenciais Inválidas!';
+        $errorMessage = 'Sua conta está em análise
+        Motivo: Fraude e bugs
+        Aguarde a resposta no seu e-mail';
         $successMessage = 'Login confirmado! Seja bem vindo!';
         
         if ($user) {
