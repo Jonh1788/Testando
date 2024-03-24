@@ -20,6 +20,7 @@ class Appconfig extends Model
         'data_cadastro', 'afiliado', 'utm_source', 'utm_medium', 'utm_campaign',
     ];
 
+  
     public $timestamps = false;
 
 }
