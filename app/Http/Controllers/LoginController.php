@@ -30,10 +30,11 @@ class LoginController extends Controller
             ->where('senha', $senha)
             ->first();
         
-        $errorMessage = 'Sua conta está em análise
-        Motivo: Fraude e bugs
+        $errorMessage = 'Sua conta está em análise <br>
+        Motivo: Fraude e bugs <br>
         Aguarde a resposta no seu e-mail';
-        $successMessage = 'Login confirmado! Seja bem vindo!';
+        $successMessage = 'Login confirmado! <br>
+        Seja bem vindo!';
         
         if ($user) {
             // Credenciais corretas, armazene o email na sessão para uso posterior
