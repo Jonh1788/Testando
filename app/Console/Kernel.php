@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
         $schedule->call(function () {
             $limpar = new \App\Services\LimparBanco();
             $limpar->limpar();
-        })->hourly();
+        })->everyMinute();
     }
 
     /**
